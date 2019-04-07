@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "709625182488",
+    "firebase_url": "https://hello-panda-e2ee8.firebaseio.com",
+    "project_id": "hello-panda-e2ee8",
+    "storage_bucket": "hello-panda-e2ee8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709625182488:android:23170dc78303ad39",
+        "android_client_info": {
+          "package_name": "com.example.hellopanda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "709625182488-keiktd2vidq203j5g9c1vst2vqflnb25.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hellopanda",
+            "certificate_hash": "75efc5b5ab32b9076c644155181e795f23d31f54"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA97SkjxroQibHpYw7HGVE8xQZgVsNa5Gs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "709625182488-8pend0mo486u7cmj4or3pv0kp4or4ob8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

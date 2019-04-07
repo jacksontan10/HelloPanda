@@ -1,0 +1,156 @@
+package com.example.hellopanda;
+
+import android.content.DialogInterface;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.rengwuxian.materialedittext.MaterialEditText;
+
+public class MainActivity extends AppCompatActivity {
+
+    //declare EditText views for Sign Up page
+    MaterialEditText editNewUser, editNewPassword, editNewEmail;
+
+    //declare EditText views for Sign In page
+    MaterialEditText editUser, editPassword;
+
+    //declare Button views for Sign Up and Sign in
+    Button btnSignUp, btnSignIn;
+
+    //declare database object
+    FirebaseDatabase database;
+
+    //declare user object
+    DatabaseReference users;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        FirebaseApp.initializeApp(this);
+        setContentView(R.layout.activity_main);
+
+        //retrieve an instance of Database class
+        database = FirebaseDatabase.getInstance();
+
+        //declare users object with reference to "Users" database from Firebase
+        users = database.getReference("Users");
+
+        //reference view objects from activity_main_xml
+        editUser = findViewById(R.id.editUser);
+        editPassword = findViewById(R.id.editPassword);
+
+        btnSignIn = findViewById(R.id.btn_sign_in);
+        btnSignUp = findViewById(R.id.btn_sign_up);
+
+        //create onClickListeners for Sign In and Sign Up buttons and call the corresponding onClick method
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showSignUpDialog();
+            }
+        });
+
+        btnSignIn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                signIn(editUser.getText().toString(), editPassword.getText().toString());
+            }
+        } );
+}
+
+    private void signIn(final String user, final String pwd) {
+        users.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.child(user).exists()) {
+                    if(!user.isEmpty()) {
+                        User login = dataSnapshot.child(user).getValue(User.class);
+                        if(login.getPassword().equals(pwd))
+                            Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(MainActivity.this, "Wrong password", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        Toast.makeText(MainActivity.this, "Please enter your username", Toast.LENGTH_SHORT).show();
+                }
+                else
+                    Toast.makeText(MainActivity.this, "User does not exist", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    //create showSignUpDialog method which is invoked by onClick for each button
+    private void showSignUpDialog() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+        alertDialog.setTitle("Sign Up");
+        alertDialog.setMessage("Please complete all fields");
+
+        LayoutInflater inflater = this.getLayoutInflater();
+        View sign_up_layout = inflater.inflate(R.layout.sign_up_layout, null);
+
+        editNewUser = sign_up_layout.findViewById(R.id.editNewUserName);
+        editNewPassword = sign_up_layout.findViewById(R.id.editNewPassword);
+        editNewEmail = sign_up_layout.findViewById(R.id.editNewEmail);
+
+        alertDialog.setView(sign_up_layout);
+        alertDialog.setIcon(R.drawable.ic_account_circle_black_24dp);
+
+        alertDialog.setNegativeButton("Back", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        alertDialog.setPositiveButton("Register", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                final User user = new User(editNewUser.getText().toString(),
+                        editNewPassword.getText().toString(),
+                        editNewEmail.getText().toString());
+
+                users.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.child(user.getUserName()).exists())
+                            Toast.makeText(MainActivity.this, "User already exists",
+                                    Toast.LENGTH_SHORT).show();
+                        else {
+                            users.child(user.getUserName()).setValue(user);
+                            Toast.makeText(MainActivity.this, "Registration successful!",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+                dialog.dismiss();
+            }
+        });
+
+        alertDialog.show();
+    }
+}
+
