@@ -20,21 +20,12 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    //declare EditText views for Sign Up page
+    //declare views, database and user objects
     MaterialEditText editNewUser, editNewPassword, editNewEmail;
-
-    //declare EditText views for Sign In page
     MaterialEditText editUser, editPassword;
-
-    //declare Button views for Sign Up and Sign in
     Button btnSignUp, btnSignIn;
-
-    //declare database object
     FirebaseDatabase database;
-
-    //declare user object
     DatabaseReference users;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +33,13 @@ public class MainActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_main);
 
-        //retrieve an instance of Database class
+        //retrieve an instance of the firebase database
         database = FirebaseDatabase.getInstance();
 
         //declare users object with reference to "Users" database from Firebase
         users = database.getReference("Users");
 
-        //reference view objects from activity_main_xml
+        //reference views from activity_main_xml
         editUser = findViewById(R.id.editUser);
         editPassword = findViewById(R.id.editPassword);
 
