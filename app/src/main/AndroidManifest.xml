@@ -4,6 +4,7 @@
     package="com.example.hellopanda"
     tools:ignore="GoogleAppIndexingWarning">
 
+
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
