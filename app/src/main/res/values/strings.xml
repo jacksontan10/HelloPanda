@@ -5,4 +5,11 @@
     <string name="email">Email</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
+    <string name="basics">Basics</string>
+    <string name="animals">Animals</string>
+    <string name="nature">Nature</string>
+    <string name="food">Food</string>
+    <string name="colours">Colours</string>
+    <string name="settings_name">Settings</string>
+    <string name="signout_name">Sign out</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.hellopanda;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -26,9 +27,10 @@ public class MainActivity extends AppCompatActivity {
     Button btnSignUp, btnSignIn;
     FirebaseDatabase database;
     DatabaseReference users;
+    Intent home;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_main);
@@ -69,8 +71,11 @@ public class MainActivity extends AppCompatActivity {
                 if(dataSnapshot.child(user).exists()) {
                     if(!user.isEmpty()) {
                         User login = dataSnapshot.child(user).getValue(User.class);
-                        if(login.getPassword().equals(pwd))
-                            Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                        if(login.getPassword().equals(pwd)) {
+                            home = new Intent(MainActivity.this, Home.class);
+                            startActivity(home);
+                            finish();
+                        }
                         else
                             Toast.makeText(MainActivity.this, "Wrong password", Toast.LENGTH_SHORT).show();
                     }
