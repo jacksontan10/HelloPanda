@@ -20,6 +20,7 @@
             android:id="@+id/editNewUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/arsenal"
             android:hint="@string/username"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorPrimaryDark"
@@ -33,6 +34,7 @@
             android:id="@+id/editNewPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/arsenal"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:textColor="@android:color/black"
@@ -41,14 +43,14 @@
             app:met_baseColor="@android:color/black"
             app:met_floatingLabel="highlight"
             app:met_primaryColor="@color/colorPrimaryDark"
-            app:met_singleLineEllipsis="true"
 
-            />
+            app:met_singleLineEllipsis="true" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/editNewEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/arsenal"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textColor="@android:color/black"
@@ -57,9 +59,8 @@
             app:met_baseColor="@android:color/black"
             app:met_floatingLabel="highlight"
             app:met_primaryColor="@color/colorPrimaryDark"
-            app:met_singleLineEllipsis="true"
 
-            />
+            app:met_singleLineEllipsis="true" />
 
     </LinearLayout>
 

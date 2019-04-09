@@ -3,12 +3,17 @@ package com.example.hellopanda;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
@@ -62,7 +67,32 @@ public class MainActivity extends AppCompatActivity {
                 signIn(editUser.getText().toString(), editPassword.getText().toString());
             }
         } );
-}
+
+        //top Action Toolbar
+        android.support.v7.widget.Toolbar toolbar = findViewById(R.id.action_bar);
+        setSupportActionBar(toolbar);
+
+        //centring of toolbar title and removing default title
+        TextView centredTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        //bottom navigation view
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
 
     private void signIn(final String user, final String pwd) {
         users.addListenerForSingleValueEvent(new ValueEventListener() {

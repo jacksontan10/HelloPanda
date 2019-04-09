@@ -12,4 +12,8 @@
     <string name="colours">Colours</string>
     <string name="settings_name">Settings</string>
     <string name="signout_name">Sign out</string>
+    <string name="learn_icon">Learn</string>
+    <string name="test_icon">Test</string>
+    <string name="progress_icon">Progress</string>
+    <string name="ranking_icon">Ranking</string>
 </resources>

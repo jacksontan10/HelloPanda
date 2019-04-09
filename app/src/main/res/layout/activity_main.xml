@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@android:color/white"
     tools:context=".MainActivity"
     tools:ignore="Overdraw">
 
@@ -18,7 +18,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.713">
+        app:layout_constraintVertical_bias="0.711">
 
         <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -40,30 +40,31 @@
                     android:id="@+id/editUser"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/arsenal"
                     android:hint="@string/username"
                     android:textColor="@color/common_google_signin_btn_text_dark_focused"
-                    android:textColorHint="@color/colorPrimaryDark"
+                    android:textColorHint="@color/colorBackgroundCream"
                     android:textSize="24sp"
                     app:met_baseColor="@android:color/black"
                     app:met_floatingLabel="highlight"
-                    app:met_primaryColor="@color/colorPrimaryDark"
+                    app:met_primaryColor="@color/colorBackgroundCream"
                     app:met_singleLineEllipsis="true" />
 
                 <com.rengwuxian.materialedittext.MaterialEditText
                     android:id="@+id/editPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/arsenal"
                     android:hint="@string/password"
                     android:inputType="textPassword"
                     android:textColor="@android:color/black"
-                    android:textColorHint="@color/colorPrimaryDark"
+                    android:textColorHint="@color/colorBackgroundCream"
                     android:textSize="24sp"
                     app:met_baseColor="@android:color/black"
                     app:met_floatingLabel="highlight"
-                    app:met_primaryColor="@color/colorPrimaryDark"
-                    app:met_singleLineEllipsis="true"
+                    app:met_primaryColor="@color/colorBackgroundCream"
 
-                    />
+                    app:met_singleLineEllipsis="true" />
 
 
             </LinearLayout>
@@ -73,16 +74,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/login_info"
-            android:layout_margin="8dp"
+            android:layout_marginTop="-9dp"
+            android:layout_marginBottom="8dp"
             android:orientation="horizontal"
             android:weightSum="2">
 
             <Button
                 android:id="@+id/btn_sign_in"
                 style="@style/Widget.AppCompat.Button.Colored"
+
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#66CD00"
+                android:fontFamily="@font/arsenal"
                 android:text="@string/sign_in" />
 
             <Button
@@ -91,8 +96,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#66CD00"
+                android:fontFamily="@font/arsenal"
                 android:text="@string/sign_up"
-                android:textColorLink="@color/colorPrimaryDark" />
+                android:textColorLink="@color/colorBackgroundCream" />
 
         </LinearLayout>
 
@@ -112,7 +119,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916"
+        app:layout_constraintVertical_bias="0.862"
         app:srcCompat="@drawable/hellopanda_icon" />
 
     <TextView
@@ -122,12 +129,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="32dp"
-        android:text="Hello Panda!"
+        android:text="@string/app_name"
+        android:textColor="#66CD00"
         android:textColorLink="@android:color/black"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:fontFamily="@font/arsenal" />
+        tools:fontFamily="@font/chewy" />
 
 </android.support.constraint.ConstraintLayout>
