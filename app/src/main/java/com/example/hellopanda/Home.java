@@ -40,11 +40,6 @@ import android.support.v7.widget.Toolbar;
             //bottom navigation view
             BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
             bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
-
-            //GridLayout outerGrid = (GridLayout) findViewById(R.id.outerGrid);
-
-            //Set Event
-            //setSingleEvent(outerGrid);
         }
 
         private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
@@ -95,7 +90,10 @@ import android.support.v7.widget.Toolbar;
                     return true;
 
                 case R.id.signout:
-                    Toast.makeText(this, "Signout selected", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "一会儿见! See you soon!", Toast.LENGTH_SHORT).show();
+                    Intent logOut = new Intent(Home.this, MainActivity.class);
+                    startActivity(logOut);
+                    finish();
                     return true;
 
                 default:

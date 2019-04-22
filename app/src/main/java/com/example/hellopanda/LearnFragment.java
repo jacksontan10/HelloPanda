@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,11 +14,11 @@ import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.Toast;
 
-public class LearnFragment extends Fragment {
+public class LearnFragment extends Fragment implements View.OnClickListener {
 
     View myFragment;
 
-    public static LearnFragment newInstance(){
+    public static LearnFragment newInstance() {
         LearnFragment learnFragment = new LearnFragment();
         return learnFragment;
     }
@@ -32,55 +33,76 @@ public class LearnFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         myFragment = inflater.inflate(R.layout.fragment_learn, container, false);
-        GridLayout outerGrid  = (GridLayout)myFragment.findViewById(R.id.outerGrid);
+        GridLayout outerGrid = (GridLayout) myFragment.findViewById(R.id.outerGrid);
+        CardView basics = myFragment.findViewById(R.id.basics);
+        CardView food = myFragment.findViewById(R.id.food);
+        CardView animals = myFragment.findViewById(R.id.animals);
+        CardView nature = myFragment.findViewById(R.id.nature);
+        CardView colours = myFragment.findViewById(R.id.colours);
 
-        //Set Event
-        setSingleEvent(outerGrid);
+        basics.setOnClickListener(this);
+        food.setOnClickListener(this);
+        animals.setOnClickListener(this);
+        nature.setOnClickListener(this);
+        colours.setOnClickListener(this);
 
         return myFragment;
     }
 
-    private void setSingleEvent(GridLayout outerGrid) {
+    //Source code with the help of: https://www.youtube.com/watch?v=VUPM387qyrw&t=12s
+    //private void setSingleEvent(GridLayout outerGrid) {
         //Loop all child item of Main Grid
-        for (int i = 0; i < outerGrid.getChildCount(); i++) {
+      //  for (int i = 0; i < outerGrid.getChildCount(); i++) {
             //All child item is CardView -> so we just cast object to CardView
-            CardView cardView = (CardView) outerGrid.getChildAt(i);
-            final int finalI = i;
-            cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+         //   CardView cardView = (CardView) outerGrid.getChildAt(i);
+         //   final int finalI = i;
+         //   cardView.setOnClickListener(new View.OnClickListener() {
+            //    @Override
+               // public void onClick(View view) {
+                 //   Intent intent = new Intent(getContext(), LearnTopics.class); //change Home.class to new page with flashcards
+               //     intent.putExtra("info", "This is activity from card item index  " + finalI);
+             //       startActivity(intent);
+  //              }
+//
+      //      });
+    //    }
 
-                    Intent intent = new Intent(getContext(), Home.class);
-                    intent.putExtra("info","This is activity from card item index  "+finalI);
-                    startActivity(intent);
 
-                }
-            });
+    //Source: https://stackoverflow.com/questions/32700818/how-to-open-a-fragment-on-button-click-from-a-fragment-in-android
+    @Override
+    public void onClick(View view) {
+        Fragment fragment = null;
+        switch (view.getId()) {
+            case R.id.basics:
+                fragment = new LearnTopics();
+                replaceFragment(fragment);
+                break;
+            case R.id.food:
+                fragment = new LearnTopics();
+                replaceFragment(fragment);
+                break;
+            case R.id.animals:
+                fragment = new LearnTopics();
+                replaceFragment(fragment);
+                break;
+            case R.id.nature:
+                fragment = new LearnTopics();
+                replaceFragment(fragment);
+                break;
+            case R.id.colours:
+                fragment = new LearnTopics();
+                replaceFragment(fragment);
+                break;
         }
+
+
     }
 
-    //Toggle Event
-    private void setToggleEvent(GridLayout outerGrid) {
-        //Loop all child item of Outer grid
-        for (int i = 0; i < outerGrid.getChildCount(); i++) {
-            //You can see , all child item is CardView , so we just cast object to CardView
-            final CardView cardView = (CardView) outerGrid.getChildAt(i);
-            cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (cardView.getCardBackgroundColor().getDefaultColor() == -1) {
-                        //Change background color
-                        cardView.setCardBackgroundColor(Color.parseColor("#FF6F00"));
-                        Toast.makeText(getContext(), "State : True", Toast.LENGTH_SHORT).show();
-
-                    } else {
-                        //Change background color
-                        cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                        Toast.makeText(getContext(), "State : False", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-        }
+    public void replaceFragment(Fragment someFragment) {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.learnFragmentFrame, someFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
 }
