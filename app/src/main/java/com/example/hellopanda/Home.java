@@ -3,6 +3,7 @@ package com.example.hellopanda;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.Menu;
@@ -10,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.GridLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
@@ -20,9 +22,18 @@ import android.support.v7.widget.Toolbar;
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_home);
-
-            Toolbar toolbar = findViewById(R.id.action_bar);
+            //-----MENU SECTION-----//
+            //top Action Toolbar
+            android.support.v7.widget.Toolbar toolbar = findViewById(R.id.action_bar);
             setSupportActionBar(toolbar);
+
+            //centering of toolbar title and removing default title
+            TextView centredTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+            //bottom navigation view
+            BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
             GridLayout outerGrid = (GridLayout) findViewById(R.id.outerGrid);
 

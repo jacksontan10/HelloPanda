@@ -4,20 +4,24 @@
     <item
         android:id="@+id/learn"
         android:icon="@drawable/learn_icon"
+        android:enabled="true"
         android:title="@string/learn_icon"/>
 
     <item
         android:id="@+id/test"
         android:icon="@drawable/test_icon"
+        android:enabled="true"
         android:title="@string/test_icon"/>
 
     <item
         android:id="@+id/progress"
         android:icon="@drawable/progress_icon"
+        android:enabled="true"
         android:title="@string/progress_icon"/>
 
     <item
         android:id="@+id/ranking"
         android:icon="@drawable/ranking_icon"
+        android:enabled="true"
         android:title="@string/ranking_icon"/>
 </menu>

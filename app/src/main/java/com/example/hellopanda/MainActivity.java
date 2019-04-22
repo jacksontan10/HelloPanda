@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_main);
 
+        //-----SIGN IN / SIGN UP SECTION-----//
         //retrieve an instance of the firebase database
         database = FirebaseDatabase.getInstance();
 
@@ -68,30 +69,6 @@ public class MainActivity extends AppCompatActivity {
             }
         } );
 
-        //top Action Toolbar
-        android.support.v7.widget.Toolbar toolbar = findViewById(R.id.action_bar);
-        setSupportActionBar(toolbar);
-
-        //centring of toolbar title and removing default title
-        TextView centredTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-        //bottom navigation view
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
     }
 
     private void signIn(final String user, final String pwd) {
@@ -103,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                         User login = dataSnapshot.child(user).getValue(User.class);
                         if(login.getPassword().equals(pwd)) {
                             home = new Intent(MainActivity.this, Home.class);
-                            startActivity(home);
+                            MainActivity.this.startActivity(home);
                             finish();
                         }
                         else

@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/colorBackgroundCream"
     tools:context=".MainActivity"
     tools:ignore="Overdraw">
 
-
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="0dp"
+        android:layout_width="390dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,6 +30,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/colorBackgroundCream"
                 android:layout_alignStart="@+id/login_info"
                 android:orientation="vertical"
                 android:padding="16dp">
@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/arsenal"
                     android:hint="@string/username"
-                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textColor="@android:color/black"
                     android:textColorHint="@color/colorBackgroundCream"
                     android:textSize="24sp"
                     app:met_baseColor="@android:color/black"
@@ -66,7 +66,6 @@
 
                     app:met_singleLineEllipsis="true" />
 
-
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
@@ -86,7 +85,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#66CD00"
+                android:backgroundTint="@color/colorPrimaryGreen"
                 android:fontFamily="@font/arsenal"
                 android:text="@string/sign_in" />
 
@@ -96,7 +95,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#66CD00"
+                android:backgroundTint="@color/colorPrimaryGreen"
                 android:fontFamily="@font/arsenal"
                 android:text="@string/sign_up"
                 android:textColorLink="@color/colorBackgroundCream" />
@@ -130,7 +129,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="32dp"
         android:text="@string/app_name"
-        android:textColor="#66CD00"
+        android:textColor="@color/colorPrimaryGreen"
         android:textColorLink="@android:color/black"
         android:textSize="@android:dimen/app_icon_size"
         app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
