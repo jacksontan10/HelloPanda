@@ -10,10 +10,11 @@
     <include
         android:id="@+id/action_bar"
         layout="@layout/action_bar">
-
     </include>
 
     <FrameLayout
+        android:id="@+id/fragment_layout"
+        android:animateLayoutChanges="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_navigation"

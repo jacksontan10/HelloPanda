@@ -3,7 +3,9 @@ package com.example.hellopanda;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.Menu;
@@ -22,7 +24,7 @@ import android.support.v7.widget.Toolbar;
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_home);
-            //-----MENU SECTION-----//
+
             //top Action Toolbar
             android.support.v7.widget.Toolbar toolbar = findViewById(R.id.action_bar);
             setSupportActionBar(toolbar);
@@ -34,13 +36,46 @@ import android.support.v7.widget.Toolbar;
 
             //bottom navigation view
             BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+            bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+
+            //to display a fragment since no item has been selected
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, new LearnFragment()).commit();
 
             GridLayout outerGrid = (GridLayout) findViewById(R.id.outerGrid);
 
             //Set Event
             setSingleEvent(outerGrid);
 
+
         }
+
+        private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                        Fragment selectedFragment = null; //reference to the fragment we want to open
+
+                        switch(menuItem.getItemId()){
+                            case R.id.learn:
+                                //define what we want to do when this item (defined in bottom_navigation) is clicked -> show XFragment!
+                                selectedFragment = new LearnFragment(); //only created not shown yet
+                                break; //to leave switch statement
+                            case R.id.test:
+                                selectedFragment = new TestFragment();
+                                break;
+                            case R.id.progress:
+                                selectedFragment = new ProgressFragment();
+                                break;
+                            case R.id.ranking:
+                                selectedFragment = new RankingFragment();
+                                break;
+                        }
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout,
+                                selectedFragment).commit(); //replace(container we want to display our fragment in)
+
+                        return true; //true = we want to select the clicked item (false would still show but item would not be selected)
+                    }
+                };
 
         private void setSingleEvent(GridLayout outerGrid) {
             //Loop all child item of Main Grid
