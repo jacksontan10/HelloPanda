@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     Button btnSignUp, btnSignIn;
     FirebaseDatabase database;
     DatabaseReference users;
-    Intent home;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_main);
 
-        //-----SIGN IN / SIGN UP SECTION-----//
         //retrieve an instance of the firebase database
         database = FirebaseDatabase.getInstance();
 
@@ -79,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
                     if(!user.isEmpty()) {
                         User login = dataSnapshot.child(user).getValue(User.class);
                         if(login.getPassword().equals(pwd)) {
-                            home = new Intent(MainActivity.this, Home.class);
-                            MainActivity.this.startActivity(home);
+                            Intent homeActivity = new Intent(MainActivity.this, Home.class);
+                            MainActivity.this.startActivity(homeActivity);
                             finish();
                         }
                         else

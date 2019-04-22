@@ -30,23 +30,21 @@ import android.support.v7.widget.Toolbar;
             setSupportActionBar(toolbar);
 
             //centering of toolbar title and removing default title
-            TextView centredTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+            TextView centredTitle = toolbar.findViewById(R.id.toolbar_title);
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+            //to display a fragment since no item has been selected
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, new LearnFragment()).commit();
 
             //bottom navigation view
             BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
             bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
 
-            //to display a fragment since no item has been selected
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, new LearnFragment()).commit();
-
-            GridLayout outerGrid = (GridLayout) findViewById(R.id.outerGrid);
+            //GridLayout outerGrid = (GridLayout) findViewById(R.id.outerGrid);
 
             //Set Event
-            setSingleEvent(outerGrid);
-
-
+            //setSingleEvent(outerGrid);
         }
 
         private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
@@ -75,50 +73,12 @@ import android.support.v7.widget.Toolbar;
 
                         return true; //true = we want to select the clicked item (false would still show but item would not be selected)
                     }
+
+                    private void setDefaultFragment() {
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout,
+                                new LearnFragment()).commit();
+                    }
                 };
-
-        private void setSingleEvent(GridLayout outerGrid) {
-            //Loop all child item of Main Grid
-            for (int i = 0; i < outerGrid.getChildCount(); i++) {
-                //You can see , all child item is CardView , so we just cast object to CardView
-                CardView cardView = (CardView) outerGrid.getChildAt(i);
-                final int finalI = i;
-                cardView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        Intent intent = new Intent(Home.this, Home.class);
-                        intent.putExtra("info","This is activity from card item index  "+finalI);
-                        startActivity(intent);
-
-                    }
-                });
-            }
-        }
-
-        //Toggle Event
-        private void setToggleEvent(GridLayout outerGrid) {
-            //Loop all child item of Outer grid
-            for (int i = 0; i < outerGrid.getChildCount(); i++) {
-                //You can see , all child item is CardView , so we just cast object to CardView
-                final CardView cardView = (CardView) outerGrid.getChildAt(i);
-                cardView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (cardView.getCardBackgroundColor().getDefaultColor() == -1) {
-                            //Change background color
-                            cardView.setCardBackgroundColor(Color.parseColor("#FF6F00"));
-                            Toast.makeText(Home.this, "State : True", Toast.LENGTH_SHORT).show();
-
-                        } else {
-                            //Change background color
-                            cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                            Toast.makeText(Home.this, "State : False", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-            }
-        }
 
         @Override
         public boolean onCreateOptionsMenu(Menu menu) {
