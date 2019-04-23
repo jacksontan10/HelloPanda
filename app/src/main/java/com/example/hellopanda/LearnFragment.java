@@ -1,7 +1,5 @@
 package com.example.hellopanda;
 
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
-import android.widget.Toast;
 
 public class LearnFragment extends Fragment implements View.OnClickListener {
 
@@ -33,7 +30,8 @@ public class LearnFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         myFragment = inflater.inflate(R.layout.fragment_learn, container, false);
-        GridLayout outerGrid = (GridLayout) myFragment.findViewById(R.id.outerGrid);
+        //GridLayout outerGrid = (GridLayout) myFragment.findViewById(R.id.outerGrid);
+
         CardView basics = myFragment.findViewById(R.id.basics);
         CardView food = myFragment.findViewById(R.id.food);
         CardView animals = myFragment.findViewById(R.id.animals);
@@ -59,7 +57,7 @@ public class LearnFragment extends Fragment implements View.OnClickListener {
          //   cardView.setOnClickListener(new View.OnClickListener() {
             //    @Override
                // public void onClick(View view) {
-                 //   Intent intent = new Intent(getContext(), LearnTopics.class); //change Home.class to new page with flashcards
+                 //   Intent intent = new Intent(getContext(), LearnBasicsFragment.class); //change Home.class to new page with flashcards
                //     intent.putExtra("info", "This is activity from card item index  " + finalI);
              //       startActivity(intent);
   //              }
@@ -74,23 +72,23 @@ public class LearnFragment extends Fragment implements View.OnClickListener {
         Fragment fragment = null;
         switch (view.getId()) {
             case R.id.basics:
-                fragment = new LearnTopics();
+                fragment = new LearnBasicsFragment();
                 replaceFragment(fragment);
                 break;
             case R.id.food:
-                fragment = new LearnTopics();
+                fragment = new LearnFoodFragment();
                 replaceFragment(fragment);
                 break;
             case R.id.animals:
-                fragment = new LearnTopics();
+                fragment = new LearnBasicsFragment();
                 replaceFragment(fragment);
                 break;
             case R.id.nature:
-                fragment = new LearnTopics();
+                fragment = new LearnBasicsFragment();
                 replaceFragment(fragment);
                 break;
             case R.id.colours:
-                fragment = new LearnTopics();
+                fragment = new LearnBasicsFragment();
                 replaceFragment(fragment);
                 break;
         }
@@ -101,7 +99,6 @@ public class LearnFragment extends Fragment implements View.OnClickListener {
     public void replaceFragment(Fragment someFragment) {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.learnFragmentFrame, someFragment);
-        transaction.addToBackStack(null);
         transaction.commit();
     }
 
