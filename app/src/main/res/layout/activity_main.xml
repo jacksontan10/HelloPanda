@@ -23,9 +23,7 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/login_info"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            app:cardElevation="4dp">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -73,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/login_info"
-            android:layout_marginTop="-9dp"
+            android:layout_marginTop="-5dp"
             android:layout_marginBottom="8dp"
             android:orientation="horizontal"
             android:weightSum="2">
@@ -135,6 +133,6 @@
         app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:fontFamily="@font/chewy" />
+        android:fontFamily="@font/chewy" />
 
 </android.support.constraint.ConstraintLayout>

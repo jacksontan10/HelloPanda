@@ -80,15 +80,15 @@ public class LearnFragment extends Fragment implements View.OnClickListener {
                 replaceFragment(fragment);
                 break;
             case R.id.animals:
-                fragment = new LearnBasicsFragment();
+                fragment = new LearnAnimalsFragment();
                 replaceFragment(fragment);
                 break;
             case R.id.nature:
-                fragment = new LearnBasicsFragment();
+                fragment = new LearnNatureFragment();
                 replaceFragment(fragment);
                 break;
             case R.id.colours:
-                fragment = new LearnBasicsFragment();
+                fragment = new LearnColoursFragment();
                 replaceFragment(fragment);
                 break;
         }
@@ -99,6 +99,7 @@ public class LearnFragment extends Fragment implements View.OnClickListener {
     public void replaceFragment(Fragment someFragment) {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.learnFragmentFrame, someFragment);
+        transaction.addToBackStack(null);
         transaction.commit();
     }
 
