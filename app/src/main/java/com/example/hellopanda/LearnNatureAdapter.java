@@ -10,20 +10,20 @@ import android.widget.ImageView;
 
 import java.util.List;
 
-public class LearnAnimalsAdapter extends PagerAdapter {
+public class LearnNatureAdapter extends PagerAdapter {
 
-    private List<LearnAnimalsModel> animalsmodels;
+    private List<LearnNatureModel> naturemodels;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public LearnAnimalsAdapter(List<LearnAnimalsModel> animalsmodels, Context context) {
-        this.animalsmodels = animalsmodels;
+    public LearnNatureAdapter(List<LearnNatureModel> naturemodels, Context context) {
+        this.naturemodels = naturemodels;
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return animalsmodels.size();
+        return naturemodels.size();
     }
 
     @Override
@@ -35,13 +35,13 @@ public class LearnAnimalsAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.item_learn_animals, container, false);
+        View view = layoutInflater.inflate(R.layout.item_learn_nature, container, false);
 
         ImageView imageView;
 
         imageView = view.findViewById(R.id.image);
 
-        imageView.setImageResource(animalsmodels.get(position).getImage());
+        imageView.setImageResource(naturemodels.get(position).getImage());
 
         container.addView(view, 0);
 
@@ -55,3 +55,4 @@ public class LearnAnimalsAdapter extends PagerAdapter {
 }
 
 //sourcecode created with the help from "Android 👆 Swipe Views using ViewPager • haerulmuttaqin" https://www.youtube.com/watch?v=UsXv6VRqZKs
+
