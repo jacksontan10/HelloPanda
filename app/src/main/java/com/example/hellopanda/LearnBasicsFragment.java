@@ -9,8 +9,6 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +17,7 @@ public class LearnBasicsFragment extends Fragment {
 
     View myFragment;
     ViewPager viewPager;
-    Adapter adapter;
+    LearnBasicsAdapter learnBasicsAdapter;
     List<LearnBasicsModel> models;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
 
@@ -60,10 +58,10 @@ public class LearnBasicsFragment extends Fragment {
         models.add(new LearnBasicsModel(R.drawable.basics21));
         models.add(new LearnBasicsModel(R.drawable.basics22));
 
-        adapter = new Adapter(models, getContext());
+        learnBasicsAdapter = new LearnBasicsAdapter(models, getContext());
 
         viewPager = myFragment.findViewById(R.id.viewPager);
-        viewPager.setAdapter(adapter);
+        viewPager.setAdapter(learnBasicsAdapter);
         viewPager.setPadding(130,0,130,0);
 
 

@@ -1,7 +1,6 @@
 package com.example.hellopanda;
 
 import android.content.Context;
-import android.graphics.ColorSpace;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
@@ -11,20 +10,20 @@ import android.widget.ImageView;
 
 import java.util.List;
 
-public class Adapter extends PagerAdapter {
+public class LearnAnimalsAdapter extends PagerAdapter {
 
-    private List<LearnBasicsModel> basicsmodels;
+    private List<LearnAnimalsModel> animalssmodels;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public Adapter(List<LearnBasicsModel> basicsmodels, Context context) {
-        this.basicsmodels = basicsmodels;
+    public LearnAnimalsAdapter(List<LearnAnimalsModel> animalssmodels, Context context) {
+        this.animalssmodels = animalssmodels;
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return basicsmodels.size();
+        return animalssmodels.size();
     }
 
     @Override
@@ -36,13 +35,13 @@ public class Adapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.item_learn_basics, container, false);
+        View view = layoutInflater.inflate(R.layout.item_learn_animals, container, false);
 
         ImageView imageView;
 
         imageView = view.findViewById(R.id.image);
 
-        imageView.setImageResource(basicsmodels.get(position).getImage());
+        imageView.setImageResource(animalssmodels.get(position).getImage());
 
         container.addView(view, 0);
 
