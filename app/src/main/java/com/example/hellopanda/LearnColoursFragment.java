@@ -10,6 +10,14 @@ import android.view.ViewGroup;
 
 public class LearnColoursFragment extends Fragment {
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        //Show Up Button (to go back)
+        ((Home)getActivity()).showUpButton();
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
