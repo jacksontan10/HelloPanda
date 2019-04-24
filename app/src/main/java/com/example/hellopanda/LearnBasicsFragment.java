@@ -71,3 +71,5 @@ public class LearnBasicsFragment extends Fragment {
         return myFragment;
     }
 }
+
+//sourcecode created with the help from https://stackoverflow.com/questions/40633639/getting-the-correct-context-in-an-adapter-and-fragment

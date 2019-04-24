@@ -54,3 +54,5 @@ public class Adapter extends PagerAdapter {
         container.removeView((View)object);
     }
 }
+
+//sourcecode created with the help from "Android 👆 Swipe Views using ViewPager • haerulmuttaqin" https://www.youtube.com/watch?v=UsXv6VRqZKs
