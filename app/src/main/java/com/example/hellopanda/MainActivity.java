@@ -80,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
                             Intent homeActivity = new Intent(MainActivity.this, Home.class);
                             MainActivity.this.startActivity(homeActivity);
                             finish();
+
+                            //get current date time and store in DB
                         }
                         else
                             Toast.makeText(MainActivity.this, "Wrong password", Toast.LENGTH_SHORT).show();
@@ -89,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                     Toast.makeText(MainActivity.this, "User does not exist", Toast.LENGTH_SHORT).show();
-
             }
 
             @Override
@@ -153,5 +154,9 @@ public class MainActivity extends AppCompatActivity {
 
         alertDialog.show();
     }
-}
 
+    //dayStreak method
+    //if lastlogged == null -> streak = 0; -> setText to 0, add currentDate to lastlogged in DB
+    //        //else -> formula to work out lastlogged, current -> //current date -> log in -> log date -> compare to prev date (if 1-1.99 then streak ++)
+    //        //put current date to lastlogged
+}
