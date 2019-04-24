@@ -1,20 +1,27 @@
 package com.example.hellopanda;
 
+import android.animation.ArgbEvaluator;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LearnBasicsFragment extends Fragment {
 
     View myFragment;
-    private int counter = 0;
-    int[] images = {R.drawable.basics1, R.drawable.basics2, R.drawable.basics3, R.drawable.basics4, R.drawable.basics5, R.drawable.basics6, R.drawable.basics7, R.drawable.basics8, R.drawable.basics9, R.drawable.basics10, R.drawable.basics11, R.drawable.basics12, R.drawable.basics13, R.drawable.basics14, R.drawable.basics15, R.drawable.basics16, R.drawable.basics17, R.drawable.basics18, R.drawable.basics19, R.drawable.basics20, R.drawable.basics21, R.drawable.basics22};
+    ViewPager viewPager;
+    Adapter adapter;
+    List<LearnBasicsModel> models;
+    ArgbEvaluator argbEvaluator = new ArgbEvaluator();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,19 +36,37 @@ public class LearnBasicsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         myFragment = inflater.inflate(R.layout.fragment_learn_basics, container, false);
 
-        final ImageView imageView = myFragment.findViewById(R.id.imageView);
-        Button button = myFragment.findViewById(R.id.button);
+        models = new ArrayList<>();
+        models.add(new LearnBasicsModel(R.drawable.basics1));
+        models.add(new LearnBasicsModel(R.drawable.basics2));
+        models.add(new LearnBasicsModel(R.drawable.basics3));
+        models.add(new LearnBasicsModel(R.drawable.basics4));
+        models.add(new LearnBasicsModel(R.drawable.basics5));
+        models.add(new LearnBasicsModel(R.drawable.basics6));
+        models.add(new LearnBasicsModel(R.drawable.basics7));
+        models.add(new LearnBasicsModel(R.drawable.basics8));
+        models.add(new LearnBasicsModel(R.drawable.basics9));
+        models.add(new LearnBasicsModel(R.drawable.basics10));
+        models.add(new LearnBasicsModel(R.drawable.basics11));
+        models.add(new LearnBasicsModel(R.drawable.basics12));
+        models.add(new LearnBasicsModel(R.drawable.basics13));
+        models.add(new LearnBasicsModel(R.drawable.basics14));
+        models.add(new LearnBasicsModel(R.drawable.basics15));
+        models.add(new LearnBasicsModel(R.drawable.basics16));
+        models.add(new LearnBasicsModel(R.drawable.basics17));
+        models.add(new LearnBasicsModel(R.drawable.basics18));
+        models.add(new LearnBasicsModel(R.drawable.basics19));
+        models.add(new LearnBasicsModel(R.drawable.basics20));
+        models.add(new LearnBasicsModel(R.drawable.basics21));
+        models.add(new LearnBasicsModel(R.drawable.basics22));
+
+        adapter = new Adapter(models, getContext());
+
+        viewPager = myFragment.findViewById(R.id.viewPager);
+        viewPager.setAdapter(adapter);
+        viewPager.setPadding(130,0,130,0);
 
 
-        button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                counter++;
-                counter%=images.length; //could also do counter%=22;
-
-                imageView.setImageResource(images[counter]);
-            }
-        });
 
         return myFragment;
     }
