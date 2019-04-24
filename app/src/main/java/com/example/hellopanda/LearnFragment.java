@@ -9,21 +9,14 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridLayout;
 
 public class LearnFragment extends Fragment implements View.OnClickListener {
 
     View myFragment;
 
-    public static LearnFragment newInstance() {
-        LearnFragment learnFragment = new LearnFragment();
-        return learnFragment;
-    }
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Nullable

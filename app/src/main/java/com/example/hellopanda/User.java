@@ -25,7 +25,4 @@ class User {
         return password;
     }
 
-    public String getEmail() {
-        return email;
-    }
 }

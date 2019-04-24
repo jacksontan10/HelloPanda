@@ -9,11 +9,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class RankingFragment extends Fragment {
+    View myFragment;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //return super.onCreateView(inflater, container, savedInstanceState);
-        return inflater.inflate(R.layout.fragment_ranking, container, false);
+        myFragment = inflater.inflate(R.layout.fragment_ranking, container, false);
+        return myFragment;
     }
 }

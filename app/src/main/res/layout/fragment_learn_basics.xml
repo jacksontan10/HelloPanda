@@ -26,7 +26,8 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="243dp"
-                app:srcCompat="@drawable/basics_drawable" />
+                app:srcCompat="@drawable/basics_drawable"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/chineseText"

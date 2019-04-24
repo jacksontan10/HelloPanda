@@ -16,4 +16,6 @@
     <string name="test_icon">Test</string>
     <string name="progress_icon">Progress</string>
     <string name="ranking_icon">Ranking</string>
+    <string name="_0">0</string>
+    <string name="_1_30">1/30</string>
 </resources>
