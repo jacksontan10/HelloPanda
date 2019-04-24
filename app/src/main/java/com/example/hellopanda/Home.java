@@ -28,6 +28,7 @@ import android.widget.Toast;
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+
             //to display a fragment since no item has been selected
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, new LearnFragment()).commit();
 
@@ -42,7 +43,7 @@ import android.widget.Toast;
                     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                         Fragment selectedFragment = null; //reference to the fragment we want to open
 
-                        switch(menuItem.getItemId()){
+                        switch (menuItem.getItemId()) {
                             case R.id.learn:
                                 //define what we want to do when this item (defined in bottom_navigation) is clicked -> show XFragment!
                                 selectedFragment = new LearnFragment(); //only created not shown yet
@@ -74,7 +75,7 @@ import android.widget.Toast;
 
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {
-            switch(item.getItemId()){
+            switch (item.getItemId()) {
                 case R.id.settings:
                     Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show();
                     return true;
@@ -86,8 +87,18 @@ import android.widget.Toast;
                     finish();
                     return true;
 
+                case android.R.id.home:
+                    getSupportFragmentManager().popBackStack();
+                    return true;
+
                 default:
                     return super.onOptionsItemSelected(item);
             }
+
         }
-}
+
+        //back button for fragments
+        public void showUpButton() { getSupportActionBar().setDisplayHomeAsUpEnabled(true); }
+        public void hideUpButton() { getSupportActionBar().setDisplayHomeAsUpEnabled(false); }
+
+    }

@@ -7,14 +7,14 @@
     app:popupTheme="@style/CustomPopupStyle">
 
     <TextView
+        android:id="@+id/toolbar_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
         android:layout_gravity="center"
-        android:id="@+id/toolbar_title"
         android:fontFamily="@font/chewy"
-        android:textSize="23sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"/>
+        android:text="@string/app_name"
+        android:textColor="@android:color/white"
+        android:textSize="26sp"
+        android:textStyle="bold" />
 
 </android.support.v7.widget.Toolbar>

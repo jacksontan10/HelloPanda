@@ -60,7 +60,7 @@ public class TestFinished extends AppCompatActivity {
             int correctAnswer = extra.getInt("CORRECT");
 
             txtResultScore.setText(String.format("Score : %d", score));
-            getTxtResultQuestion.setText(String.format("PASSED : %d / %d", correctAnswer, totalQuestion));
+            getTxtResultQuestion.setText(String.format("Passed : %d / %d", correctAnswer, totalQuestion));
 
             progressBar.setMax(totalQuestion);
             progressBar.setProgress(correctAnswer);
