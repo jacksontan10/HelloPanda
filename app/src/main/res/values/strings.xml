@@ -16,4 +16,5 @@
     <string name="test_icon">Test</string>
     <string name="progress_icon">Progress</string>
     <string name="ranking_icon">Ranking</string>
+    <string name="button">Next</string>
 </resources>

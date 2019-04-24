@@ -4,23 +4,17 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridLayout;
+
 
 public class LearnFragment extends Fragment implements View.OnClickListener, FragmentManager.OnBackStackChangedListener {
 
     View myFragment;
-
-    public static LearnFragment newInstance() {
-        LearnFragment learnFragment = new LearnFragment();
-        return learnFragment;
-    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -87,11 +81,10 @@ public class LearnFragment extends Fragment implements View.OnClickListener, Fra
 
     //Source: verboze implementation of back button on https://stackoverflow.com/questions/13086840/actionbar-up-navigation-with-fragments
     public void onBackStackChanged() {
-        // enable Up button only  if there are entries on the backstack
+        // enable Up button only if there are entries on the backstack
         if(getActivity().getSupportFragmentManager().getBackStackEntryCount() < 1) {
             ((Home)getActivity()).hideUpButton();
         }
     }
-
 
 }
