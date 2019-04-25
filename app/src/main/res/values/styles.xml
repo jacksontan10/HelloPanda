@@ -9,6 +9,15 @@
         <item name="android:background">@color/colorPrimaryGreen</item>
     </style>
 
+    <!--No Action Bar-->
+    <style name="AppTheme.NoActionBar">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <!--Menu items customisation-->
     <style name="CustomPopupStyle" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:background">@android:color/white</item>

@@ -24,7 +24,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Onboarding">
+        <activity android:name=".Onboarding"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
