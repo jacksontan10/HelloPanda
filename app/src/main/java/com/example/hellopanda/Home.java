@@ -94,6 +94,7 @@ public class Home extends AppCompatActivity {
 
                 case android.R.id.home:
                     getSupportFragmentManager().popBackStack();
+                    hideUpButton();
                     return true;
 
                 default:
