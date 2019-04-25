@@ -78,3 +78,5 @@ public class SliderAdapter extends PagerAdapter {
     }
 
 }
+
+//sourcecode created with the help of Android Slide / Walkthrough / Onboarding Screen Design - Android Studio: https://www.youtube.com/watch?v=byLKoPgB7yA
