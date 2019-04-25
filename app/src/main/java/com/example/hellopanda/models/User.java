@@ -7,8 +7,6 @@ public class User {
     private String user;
     private String password;
     private String email;
-    private ZonedDateTime time;
-    private long streak;
 
     // initialise constructors
     public User() {
@@ -18,14 +16,6 @@ public class User {
         this.user = user;
         this.password = password;
         this.email = email;
-    }
-
-    public User(ZonedDateTime time) {
-        this.time = time;
-    }
-
-    public User(long streak) {
-        this.streak = streak;
     }
 
     // create getter methods
@@ -39,13 +29,5 @@ public class User {
 
     public String getEmail() {
         return email;
-    }
-
-    public ZonedDateTime getTime() {
-        return time;
-    }
-
-    public long getStreak() {
-        return streak;
     }
 }
