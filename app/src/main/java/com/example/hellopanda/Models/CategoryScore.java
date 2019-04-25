@@ -1,9 +1,12 @@
-package com.example.hellopanda;
+package com.example.hellopanda.Models;
 
 public class CategoryScore {
     private String Category_Score;
     private String user;
     private String score;
+
+    public CategoryScore() {
+    }
 
     public CategoryScore(String Category_Score, String user, String score) {
         this.Category_Score = Category_Score;

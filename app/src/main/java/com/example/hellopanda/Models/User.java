@@ -1,8 +1,8 @@
-package com.example.hellopanda;
+package com.example.hellopanda.Models;
 
-class User {
+public class User {
     //define variables for User
-    private String userName;
+    private String user;
     private String password;
     private String email;
 
@@ -10,15 +10,15 @@ class User {
     }
 
     // initialise constructor
-    public User(String userName, String password, String email) {
-        this.userName = userName;
+    public User(String user, String password, String email) {
+        this.user = user;
         this.password = password;
         this.email = email;
     }
 
     // create getter methods
-    public String getUserName() {
-        return userName;
+    public String getUser() {
+        return user;
     }
 
     public String getPassword() {

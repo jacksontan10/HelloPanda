@@ -16,7 +16,7 @@
         android:layout_height="wrap_content">
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/editNewUserName"
+            android:id="@+id/editNewUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/arsenal"

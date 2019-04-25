@@ -12,7 +12,12 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-    public class Home extends AppCompatActivity {
+import com.example.hellopanda.Fragments.LearnFragment;
+import com.example.hellopanda.Fragments.ProgressFragment;
+import com.example.hellopanda.Fragments.RankingFragment;
+import com.example.hellopanda.Fragments.TestFragment;
+
+public class Home extends AppCompatActivity {
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {

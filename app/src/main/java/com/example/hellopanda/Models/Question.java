@@ -1,4 +1,4 @@
-package com.example.hellopanda;
+package com.example.hellopanda.Models;
 
 public class Question {
     private String QuestionText, QuestionImage, AnswerA, AnswerB, AnswerC, AnswerD, CorrectAnswer, CategoryId;

@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.hellopanda.Models.User;
+import com.example.hellopanda.Test.Common;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -104,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         LayoutInflater inflater = this.getLayoutInflater();
         View sign_up_layout = inflater.inflate(R.layout.sign_up_layout, null);
 
-        editNewUser = sign_up_layout.findViewById(R.id.editNewUserName);
+        editNewUser = sign_up_layout.findViewById(R.id.editNewUser);
         editNewPassword = sign_up_layout.findViewById(R.id.editNewPassword);
         editNewEmail = sign_up_layout.findViewById(R.id.editNewEmail);
 
@@ -128,11 +130,11 @@ public class MainActivity extends AppCompatActivity {
                 users.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.child(user.getUserName()).exists())
+                        if (dataSnapshot.child(user.getUser()).exists())
                             Toast.makeText(MainActivity.this, "User already exists",
                                     Toast.LENGTH_SHORT).show();
                         else {
-                            users.child(user.getUserName()).setValue(user);
+                            users.child(user.getUser()).setValue(user);
                             Toast.makeText(MainActivity.this, "Registration successful!",
                                     Toast.LENGTH_SHORT).show();
                         }

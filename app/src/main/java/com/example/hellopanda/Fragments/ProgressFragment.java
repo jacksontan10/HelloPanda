@@ -1,4 +1,4 @@
-package com.example.hellopanda;
+package com.example.hellopanda.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,19 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class RankingFragment extends Fragment {
-    View myFragment;
+import com.example.hellopanda.R;
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+public class ProgressFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //return super.onCreateView(inflater, container, savedInstanceState);
-        myFragment = inflater.inflate(R.layout.fragment_ranking, container, false);
-        return myFragment;
+        return inflater.inflate(R.layout.fragment_progress, container, false);
     }
 }

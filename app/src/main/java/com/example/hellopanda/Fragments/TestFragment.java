@@ -1,17 +1,22 @@
-package com.example.hellopanda;
+package com.example.hellopanda.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.hellopanda.Test.Common;
+import com.example.hellopanda.Models.Category;
+import com.example.hellopanda.R;
+import com.example.hellopanda.Test.CategoryViewHolder;
+import com.example.hellopanda.Test.ItemClickListener;
+import com.example.hellopanda.Test.Start;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -69,7 +74,7 @@ public class TestFragment extends Fragment implements View.OnClickListener {
                     @Override
                     public void onClick(int position) {
                         //Toast.makeText(getActivity(), String.format("%s|%s", adapter.getRef(position).getKey(), model.getName()), Toast.LENGTH_SHORT).show();
-                        Intent startTest = new Intent(getActivity(),Start.class);
+                        Intent startTest = new Intent(getActivity(), Start.class);
                         Common.categoryId = adapter.getRef(position).getKey();
                         startActivity(startTest);
                     }

@@ -1,4 +1,4 @@
-package com.example.hellopanda;
+package com.example.hellopanda.Test;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.hellopanda.Home;
+import com.example.hellopanda.Models.CategoryScore;
+import com.example.hellopanda.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -26,7 +29,7 @@ public class TestFinished extends AppCompatActivity {
         setContentView(R.layout.activity_test_finished);
 
         database = FirebaseDatabase.getInstance();
-        category_score = database.getReference("Question_Score");
+        category_score = database.getReference("Category_Score");
 
         txtResultScore = findViewById(R.id.textTotalScore);
         getTxtResultQuestion = findViewById(R.id.textTotalQuestion);
@@ -37,7 +40,7 @@ public class TestFinished extends AppCompatActivity {
         btnTryAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TestFinished.this,Playing.class);
+                Intent intent = new Intent(TestFinished.this, Playing.class);
                 startActivity(intent);
                 finish();
             }
@@ -46,7 +49,7 @@ public class TestFinished extends AppCompatActivity {
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TestFinished.this,Home.class);
+                Intent intent = new Intent(TestFinished.this, Home.class);
                 startActivity(intent);
                 finish();
             }
@@ -66,10 +69,10 @@ public class TestFinished extends AppCompatActivity {
             progressBar.setProgress(correctAnswer);
 
             //Upload points to database
-            category_score.child(String.format("%s_%s", Common.currentUser.getUserName(), Common.categoryId))
-                    .setValue(new CategoryScore(String.format("%s_%s", Common.currentUser.getUserName(),
+            category_score.child(String.format("%s_%s", Common.currentUser.getUser(), Common.categoryId))
+                    .setValue(new CategoryScore(String.format("%s_%s", Common.currentUser.getUser(),
                             Common.categoryId),
-                            Common.currentUser.getUserName(),
+                            Common.currentUser.getUser(),
                             String.valueOf(score)));
         }
     }

@@ -1,4 +1,4 @@
-package com.example.hellopanda;
+package com.example.hellopanda.Test;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hellopanda.R;
 import com.squareup.picasso.Picasso;
 
 public class Playing extends AppCompatActivity implements View.OnClickListener {
@@ -99,7 +100,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
         }
 
         else {
-            Intent intent = new Intent(this,TestFinished.class);
+            Intent intent = new Intent(this, TestFinished.class);
             Bundle dataSend = new Bundle();
             dataSend.putInt("SCORE", score);
             dataSend.putInt("TOTAL", totalQuestion);

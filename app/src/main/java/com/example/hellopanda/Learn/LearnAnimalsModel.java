@@ -1,10 +1,10 @@
-package com.example.hellopanda;
+package com.example.hellopanda.Learn;
 
-public class LearnFoodModel {
+public class LearnAnimalsModel {
 
     private int image;
 
-    public LearnFoodModel(int image) {
+    public LearnAnimalsModel(int image) {
         this.image = image;
     }
 

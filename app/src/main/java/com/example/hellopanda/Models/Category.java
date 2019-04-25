@@ -1,4 +1,4 @@
-package com.example.hellopanda;
+package com.example.hellopanda.Models;
 
 public class Category {
     private String Name;
