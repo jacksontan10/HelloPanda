@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Test.Start">
+        <activity android:name=".test.Start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,7 +40,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Test.Playing">
+        <activity android:name=".test.Playing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,7 +48,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Test.TestFinished">
+        <activity android:name=".test.TestFinished">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
