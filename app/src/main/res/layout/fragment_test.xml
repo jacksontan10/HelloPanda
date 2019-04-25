@@ -4,7 +4,7 @@
     android:id="@+id/testFragmentFrame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.TestFragment">
+    tools:context=".fragments.TestFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/listCategory"

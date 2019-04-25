@@ -12,10 +12,10 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.hellopanda.Fragments.LearnFragment;
-import com.example.hellopanda.Fragments.ProgressFragment;
-import com.example.hellopanda.Fragments.RankingFragment;
-import com.example.hellopanda.Fragments.TestFragment;
+import com.example.hellopanda.fragments.LearnFragment;
+import com.example.hellopanda.fragments.ProgressFragment;
+import com.example.hellopanda.fragments.RankingFragment;
+import com.example.hellopanda.fragments.TestFragment;
 
 public class Home extends AppCompatActivity {
 
