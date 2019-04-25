@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.child(user.getUser()).exists())
-                            Toast.makeText(MainActivity.this, "User already exists",
+                            Toast.makeText(MainActivity.this, "Username is already taken",
                                     Toast.LENGTH_SHORT).show();
                         else {
                             users.child(user.getUser()).setValue(user);

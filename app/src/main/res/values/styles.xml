@@ -20,4 +20,8 @@
         <item name = "colorControlHighlight">#1CB3BC </item>
     </style>
 
+    <style name="AppTheme.DefaultButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@drawable/default_button</item>
+    </style>
+
 </resources>

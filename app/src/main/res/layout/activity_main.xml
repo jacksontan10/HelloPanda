@@ -78,13 +78,13 @@
             <Button
                 android:id="@+id/btn_sign_in"
                 style="@style/Widget.AppCompat.Button.Colored"
-
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/colorPrimaryGreen"
-                android:fontFamily="@font/arsenal"
-                android:text="@string/sign_in" />
+                android:fontFamily="@font/chewy"
+
+                android:text="Login" />
 
             <Button
                 android:id="@+id/btn_sign_up"
@@ -93,9 +93,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/colorPrimaryGreen"
-                android:fontFamily="@font/arsenal"
-                android:text="@string/sign_up"
-                android:textColorLink="@color/colorBackgroundCream" />
+                android:fontFamily="@font/chewy"
+                android:text="@string/sign_up" />
 
         </LinearLayout>
 
