@@ -31,9 +31,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        app:labelVisibilityMode="labeled"
         android:background="?android:attr/windowBackground"
-        app:itemIconTint="@drawable/nav_colour_state"
-        app:itemTextColor="@drawable/nav_colour_state"
+        android:theme="@style/BottomNavigationTheme"
         app:menu="@menu/bottom_navigation" />
 
 </RelativeLayout>

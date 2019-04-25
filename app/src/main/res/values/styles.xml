@@ -29,4 +29,9 @@
         <item name = "colorControlHighlight">#1CB3BC </item>
     </style>
 
+    <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorPrimaryGreen</item>
+        <item name="android:textColorSecondary">@color/inactive</item>
+    </style>
+
 </resources>

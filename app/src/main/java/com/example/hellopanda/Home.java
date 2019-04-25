@@ -33,13 +33,13 @@ public class Home extends AppCompatActivity {
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-
             //to display a fragment since no item has been selected
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, new LearnFragment()).commit();
 
             //bottom navigation view
             BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
             bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+
         }
 
         private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
@@ -81,10 +81,6 @@ public class Home extends AppCompatActivity {
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.settings:
-                    Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show();
-                    return true;
-
                 case R.id.signout:
                     Toast.makeText(this, "一会儿见! See you soon!", Toast.LENGTH_SHORT).show();
                     Intent logOut = new Intent(Home.this, MainActivity.class);
