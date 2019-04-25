@@ -21,8 +21,12 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
+
+import java.time.Duration;
+import java.time.ZonedDateTime;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,8 +34,14 @@ public class MainActivity extends AppCompatActivity {
     MaterialEditText editNewUser, editNewPassword, editNewEmail;
     MaterialEditText editUser, editPassword;
     Button btnSignUp, btnSignIn;
+    TextView dayStreak;
     FirebaseDatabase database;
     DatabaseReference users;
+
+    //get current date time and store in DB
+    ZonedDateTime logDate = ZonedDateTime.now();
+
+    long streak;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
         btnSignIn = findViewById(R.id.btn_sign_in);
         btnSignUp = findViewById(R.id.btn_sign_up);
+
+        dayStreak = findViewById(R.id.dayStreak);
 
         //create onClickListeners for Sign In and Sign Up buttons and call the corresponding onClick method
         btnSignUp.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +93,24 @@ public class MainActivity extends AppCompatActivity {
                             MainActivity.this.startActivity(homeActivity);
                             finish();
 
-                            //get current date time and store in DB
+                            //store currentDate when user successfully logs in
+                            User replaceDate = new User(logDate);
+                            users.child(user).push().setValue(replaceDate);
+
+                            //calculate difference between DB date and currentDate -> store as dayStreak in DB
+                            long days = calcDayStreak(user);
+
+                            User replaceStreak = new User(streak);
+                            if (days < 1 || days >= 2) {
+                                dayStreak.setText("0");
+                                users.child(user).child("time").push().setValue(0);
+                            }
+                            else {
+                                streak++;
+                                users.child(user).child("time").push().setValue(replaceStreak);
+                            }
+
+
                         }
                         else
                             Toast.makeText(MainActivity.this, "Wrong password", Toast.LENGTH_SHORT).show();
@@ -128,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int i) {
                 final User user = new User(editNewUser.getText().toString(),
                         editNewPassword.getText().toString(),
-                        editNewEmail.getText().toString());
+                        editNewEmail.getText().toString(), logDate);
 
                 users.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -155,8 +184,35 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    //dayStreak method
-    //if lastlogged == null -> streak = 0; -> setText to 0, add currentDate to lastlogged in DB
-    //        //else -> formula to work out lastlogged, current -> //current date -> log in -> log date -> compare to prev date (if 1-1.99 then streak ++)
-    //        //put current date to lastlogged
+    public long calcDayStreak(String user){
+        ZonedDateTime now = ZonedDateTime.now();
+        final ZonedDateTime[] oldDate = new ZonedDateTime[1];
+
+        //get User.class time for String user parameter
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Users");
+        Query query = rootRef.child(user).child("time");
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // for example: if you're expecting your user's data as an object of the "User" class.
+                User replaceDate = dataSnapshot.getValue(User.class);
+                oldDate[0] = replaceDate.getTime();
+                }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // read query is cancelled.
+            }
+        });
+
+        //oldDate = now.minusDays(1).minusMinutes(0);
+        Duration duration = Duration.between(oldDate[0], now);
+        return duration.toDays();
+        //if lastlogged == null -> streak = 0; -> setText to 0, add currentDate to lastlogged in DB
+        //        //else -> formula to work out lastlogged, current -> //current date -> log in -> log date -> compare to prev date (if 1-1.99 then streak ++)
+        //        //put current date to lastlogged
+    }
+
+
 }
