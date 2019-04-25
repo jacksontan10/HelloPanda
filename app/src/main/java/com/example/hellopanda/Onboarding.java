@@ -45,6 +45,8 @@ public class Onboarding extends AppCompatActivity {
 
         mSlideViewPager.addOnPageChangeListener(viewListener);
 
+
+
         //OnClickListeners
 
         mNextBtn.setOnClickListener(new View.OnClickListener() {
@@ -54,9 +56,16 @@ public class Onboarding extends AppCompatActivity {
 
                 mSlideViewPager.setCurrentItem(mCurrentPage + 1);
                 if(mNextBtn.getText()=="Finish") {
-                    Intent homeActivity = new Intent(Onboarding.this, Home.class);
-                    Onboarding.this.startActivity(homeActivity);
-                    finish();
+
+                    mNextBtn.setOnClickListener(new View.OnClickListener() {
+
+                        @Override
+                        public void onClick(View view) {
+                            Intent homeActivity = new Intent(Onboarding.this, Home.class);
+                            Onboarding.this.startActivity(homeActivity);
+                            finish();
+                        }
+                    });
                 }
 
             }
@@ -91,7 +100,7 @@ public class Onboarding extends AppCompatActivity {
 
         if(mDots.length > 0) {
 
-            mDots[position].setTextColor(getResources().getColor(R.color.colorWhite));
+            mDots[position].setTextColor(getResources().getColor(R.color.colorPrimaryGreen));
         }
 
     }

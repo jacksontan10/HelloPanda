@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="550dp"
         android:layout_weight="1"
         android:background="@android:color/transparent"
         android:text="Next" />
@@ -18,7 +18,7 @@
         android:id="@+id/prevBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="550dp"
         android:background="@android:color/transparent"
         android:text="Back"
         android:visibility="invisible" />
@@ -33,7 +33,9 @@
     <LinearLayout
         android:id="@+id/dotsLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:gravity="center"
         android:orientation="horizontal">
 
     </LinearLayout>

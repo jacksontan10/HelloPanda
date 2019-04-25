@@ -37,7 +37,7 @@ public class SliderAdapter extends PagerAdapter {
 
             "Learn chinese from several different categories, and test your knowledge through our multiple choice quizzes.",
             "Track your progress with your growing bamboo forest. The higher your score, the more your forest grows!",
-            "Check how well you're doing against your peers with our Rankings page"
+            "Check how well you're doing against your peers with our Rankings page."
 
     };
 
