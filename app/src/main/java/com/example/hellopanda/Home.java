@@ -12,7 +12,12 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-    public class Home extends AppCompatActivity {
+import com.example.hellopanda.Fragments.LearnFragment;
+import com.example.hellopanda.Fragments.ProgressFragment;
+import com.example.hellopanda.Fragments.RankingFragment;
+import com.example.hellopanda.Fragments.TestFragment;
+
+public class Home extends AppCompatActivity {
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +69,6 @@ import android.widget.Toast;
                         return true; //true = we want to select the clicked item (false would still show but item would not be selected)
                     }
 
-                    private void setDefaultFragment() {
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout,
-                                new LearnFragment()).commit();
-                    }
                 };
 
         @Override

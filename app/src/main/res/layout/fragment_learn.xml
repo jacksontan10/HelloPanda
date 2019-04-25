@@ -44,7 +44,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="85dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/basics_drawable" />
+                        android:src="@drawable/basics_drawable"
+                        android:contentDescription="TODO" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -83,7 +84,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="85dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/food_drawable" />
+                        android:src="@drawable/food_drawable"
+                        android:contentDescription="TODO" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -122,7 +124,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="85dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/animals_drawable" />
+                        android:src="@drawable/animals_drawable"
+                        android:contentDescription="TODO" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -162,7 +165,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="85dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/nature_drawable" />
+                        android:src="@drawable/nature_drawable"
+                        android:contentDescription="TODO" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -202,7 +206,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="85dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/colours_drawable" />
+                        android:src="@drawable/colours_drawable"
+                        android:contentDescription="TODO" />
 
                     <TextView
                         android:layout_width="wrap_content"

@@ -1,4 +1,4 @@
-package com.example.hellopanda;
+package com.example.hellopanda.Learn;
 
 import android.animation.ArgbEvaluator;
 import android.os.Bundle;
@@ -9,7 +9,9 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
+import com.example.hellopanda.Home;
+import com.example.hellopanda.R;
 
 import java.util.ArrayList;
 import java.util.List;

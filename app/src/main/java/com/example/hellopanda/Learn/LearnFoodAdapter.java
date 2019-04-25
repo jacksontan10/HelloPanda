@@ -1,4 +1,4 @@
-package com.example.hellopanda;
+package com.example.hellopanda.Learn;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,22 +8,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.hellopanda.R;
+
 import java.util.List;
 
-public class LearnAnimalsAdapter extends PagerAdapter {
+public class LearnFoodAdapter extends PagerAdapter {
 
-    private List<LearnAnimalsModel> animalsmodels;
+    private List<LearnFoodModel> foodmodels;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public LearnAnimalsAdapter(List<LearnAnimalsModel> animalsmodels, Context context) {
-        this.animalsmodels = animalsmodels;
+    public LearnFoodAdapter(List<LearnFoodModel> foodmodels, Context context) {
+        this.foodmodels = foodmodels;
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return animalsmodels.size();
+        return foodmodels.size();
     }
 
     @Override
@@ -35,13 +37,13 @@ public class LearnAnimalsAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.item_learn_animals, container, false);
+        View view = layoutInflater.inflate(R.layout.item_learn_food, container, false);
 
         ImageView imageView;
 
         imageView = view.findViewById(R.id.image);
 
-        imageView.setImageResource(animalsmodels.get(position).getImage());
+        imageView.setImageResource(foodmodels.get(position).getImage());
 
         container.addView(view, 0);
 
@@ -55,3 +57,4 @@ public class LearnAnimalsAdapter extends PagerAdapter {
 }
 
 //sourcecode created with the help from "Android 👆 Swipe Views using ViewPager • haerulmuttaqin" https://www.youtube.com/watch?v=UsXv6VRqZKs
+
