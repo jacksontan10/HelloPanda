@@ -17,4 +17,16 @@
         android:textSize="26sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/toolbar_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:gravity="center"
+        android:fontFamily="@font/chewy"
+        android:text="user"
+        android:textColor="@android:color/white"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
 </android.support.v7.widget.Toolbar>
