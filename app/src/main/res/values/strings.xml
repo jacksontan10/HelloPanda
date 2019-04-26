@@ -17,4 +17,5 @@
     <string name="progress_icon">Progress</string>
     <string name="ranking_icon">Ranking</string>
     <string name="button">Next</string>
+    <string name="chat">Thank you for signing up! Now it\'s time to choose your Panda.</string>
 </resources>
