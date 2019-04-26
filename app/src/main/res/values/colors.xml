@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">#66CD00</color>
     <color name="colorPrimaryGreen">#66CD00</color>
+    <color name="colorAccent">#66CD00</color>
+    <color name="textColorPrimary">#66CD00</color>
     <color name="colorBackgroundCream">#FFFCF0</color>
     <color name="colorAccentGray">#F0F3F1</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimaryDark">#66CD00</color>
     <color name="colorPrimaryDarker">#142900</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorTransparentWhite">#cccccc</color>
     <color name="inactive">#c5c5c5</color>
+    <color name="accent_material_dark">#66CD00</color>
+    <color name="accent_material_light">#66CD00</color>
 
 </resources>

@@ -2,11 +2,16 @@
 
     <!--Base application theme-->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorAccent">@color/colorPrimaryGreen</item>
+        <item name="colorPrimary">@color/colorPrimaryGreen</item>
+        <item name="colorControlNormal">@color/colorPrimaryGreen</item>
+        <item name = "colorControlHighlight">@color/colorPrimaryGreen</item>
     </style>
 
     <!--Action toolbar customisation-->
     <style name="CustomToolbarStyle" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:background">@color/colorPrimaryGreen</item>
+        <item name="colorPrimary">@color/colorPrimaryGreen</item>
     </style>
 
     <!--No Action Bar-->
@@ -16,6 +21,10 @@
         <item name="android:windowTranslucentStatus">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="colorControlNormal">@color/colorPrimaryGreen</item>
+        <item name="colorAccent">@color/colorPrimaryGreen</item>
+        <item name="colorPrimary">@color/colorPrimaryGreen</item>
+        <item name = "colorControlHighlight">@color/colorPrimaryGreen</item>
     </style>
 
     <!--Menu items customisation-->
@@ -23,15 +32,19 @@
         <item name="android:background">@android:color/white</item>
         <item name="overlapAnchor">false</item>
         <item name="android:dropDownVerticalOffset">-4dp</item>
+        <item name="colorAccent">@color/colorPrimaryGreen</item>
+        <item name="colorPrimary">@color/colorPrimaryGreen</item>
     </style>
 
     <style name = "MyButton" parent = "Theme.AppCompat.Light">
-        <item name = "colorControlHighlight">#1CB3BC </item>
+        <item name = "colorControlHighlight">@color/colorPrimaryGreen</item>
+        <item name="colorAccent">@color/colorPrimaryGreen</item>
     </style>
 
     <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/colorPrimaryGreen</item>
         <item name="android:textColorSecondary">@color/inactive</item>
+        <item name="colorAccent">@color/colorPrimaryGreen</item>
     </style>
 
 </resources>

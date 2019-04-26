@@ -2,6 +2,7 @@ package com.example.hellopanda;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hellopanda.models.User;
@@ -98,9 +100,8 @@ public class MainActivity extends AppCompatActivity {
 
     //create showSignUpDialog method which is invoked by onClick for each button
     private void showSignUpDialog() {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
         alertDialog.setTitle("Sign Up");
-        alertDialog.setMessage("Please complete all fields");
 
         LayoutInflater inflater = this.getLayoutInflater();
         View sign_up_layout = inflater.inflate(R.layout.sign_up_layout, null);
@@ -152,7 +153,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        alertDialog.show();
+        AlertDialog alert = alertDialog.create();
+        alert.show();
+
+        Button nbutton = alert.getButton(DialogInterface.BUTTON_NEGATIVE);
+        nbutton.setTextColor(Color.parseColor("#66CD00"));
+        Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
+        pbutton.setTextColor(Color.parseColor("#66CD00"));
+        pbutton.requestFocus();
     }
 
 }

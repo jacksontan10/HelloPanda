@@ -9,14 +9,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardElevation="4dp">
+    app:cardElevation="0dp">
 
     <LinearLayout
         android:padding="16dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#fafafa">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -38,15 +37,15 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:fontFamily="@font/arsenal"
+                android:textSize="18sp"
                 android:hint="@string/username"
                 android:textColor="@android:color/black"
-                android:textColorHint="@color/colorBackgroundCream"
-                android:textSize="18sp"
+                android:textColorHint="@color/colorPrimaryGreen"
                 app:met_baseColor="@android:color/black"
                 app:met_floatingLabel="highlight"
-                app:met_primaryColor="@color/colorBackgroundCream"
-                app:met_singleLineEllipsis="true"
-                android:background="#fafafa" />
+                app:met_primaryColor="@color/colorPrimaryDark"
+                android:background="#fafafa"
+                app:met_singleLineEllipsis="true" />
 
         </LinearLayout>
 
@@ -70,15 +69,16 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:fontFamily="@font/arsenal"
-                android:hint="@string/password"
-                android:textColor="@android:color/black"
-                android:textColorHint="@color/colorBackgroundCream"
                 android:textSize="18sp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/colorPrimaryGreen"
                 app:met_baseColor="@android:color/black"
                 app:met_floatingLabel="highlight"
-                app:met_primaryColor="@color/colorBackgroundCream"
-                app:met_singleLineEllipsis="true"
-                android:background="#fafafa" />
+                app:met_primaryColor="@color/colorPrimaryDark"
+                android:background="#fafafa"
+                app:met_singleLineEllipsis="true" />
 
         </LinearLayout>
 
@@ -106,7 +106,7 @@
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:textColor="@android:color/black"
-                android:textColorHint="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryGreen"
                 app:met_baseColor="@android:color/black"
                 app:met_floatingLabel="highlight"
                 app:met_primaryColor="@color/colorPrimaryDark"

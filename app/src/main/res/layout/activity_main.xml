@@ -121,6 +121,7 @@
                         android:textColorHint="@color/colorBackgroundCream"
                         android:textSize="18sp"
                         app:met_baseColor="@android:color/black"
+                        android:inputType="textPassword"
                         app:met_floatingLabel="highlight"
                         app:met_primaryColor="@color/colorBackgroundCream"
                         app:met_singleLineEllipsis="true" />
@@ -144,6 +145,7 @@
                 android:backgroundTint="@color/colorPrimaryGreen"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/arsenal"
+                android:textAllCaps="false"
                 android:text="Login" />
 
             <Button
@@ -153,6 +155,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorPrimaryGreen"
                 android:fontFamily="@font/arsenal"
+                android:textAllCaps="false"
                 android:text="@string/sign_up" />
 
         </LinearLayout>
