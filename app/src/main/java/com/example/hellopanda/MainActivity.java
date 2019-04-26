@@ -136,9 +136,12 @@ public class MainActivity extends AppCompatActivity {
                             users.child(user.getUser()).setValue(user);
                             Toast.makeText(MainActivity.this, "Registration successful!",
                                     Toast.LENGTH_SHORT).show();
-                            Intent onboardActivity = new Intent(MainActivity.this, Onboarding.class);
+                            Intent selectPandaActivity = new Intent(MainActivity.this, SelectPanda.class);
                             Common.currentUser = user;
-                            MainActivity.this.startActivity(onboardActivity);
+                            MainActivity.this.startActivity(selectPandaActivity);
+                            //Intent onboardActivity = new Intent(MainActivity.this, Onboarding.class);
+                            //Common.currentUser = user;
+                            //MainActivity.this.startActivity(onboardActivity);
                             finish();
                         }
                     }
