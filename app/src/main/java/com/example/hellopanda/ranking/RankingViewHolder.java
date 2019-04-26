@@ -10,7 +10,7 @@ import com.example.hellopanda.test.ItemClickListener;
 
 public class RankingViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public TextView text_name, text_score;
+    public TextView text_name, text_score, text_rank;
 
     private ItemClickListener itemClickListener;
 
