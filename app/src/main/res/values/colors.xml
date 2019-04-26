@@ -4,6 +4,7 @@
     <color name="colorBackgroundCream">#FFFCF0</color>
     <color name="colorAccentGray">#F0F3F1</color>
     <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimaryDarker">#142900</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorTransparentWhite">#cccccc</color>
     <color name="inactive">#c5c5c5</color>

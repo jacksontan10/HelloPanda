@@ -2,14 +2,17 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackgroundCream">
+    android:background="@drawable/progressbackground">
 
     <Button
         android:id="@+id/nextBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="550dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
         android:layout_weight="1"
         android:background="@android:color/transparent"
         android:text="Next" />
@@ -18,7 +21,11 @@
         android:id="@+id/prevBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="550dp"
+        android:layout_marginBottom="20dp"
         android:background="@android:color/transparent"
         android:text="Back"
         android:visibility="invisible" />
@@ -34,7 +41,7 @@
         android:id="@+id/dotsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="690dp"
         android:gravity="center"
         android:orientation="horizontal">
 

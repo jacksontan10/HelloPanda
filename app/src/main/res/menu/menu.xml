@@ -6,7 +6,7 @@
         android:id="@+id/signout"
         android:layout_width="3dp"
         android:layout_height="3dp"
-        android:icon="@drawable/signout"
+        android:icon="@drawable/logout"
         android:layout_gravity="center"
         android:gravity="center"
         android:title="@string/signout_name"

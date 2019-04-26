@@ -1,57 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="20dp"
-    android:layout_gravity="center_horizontal|center_vertical">
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="20dp">
+    android:layout_gravity="center"
+    android:layout_margin="15dp"
+    android:gravity="center"
+    android:paddingTop="1dp"
+    android:orientation="vertical"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="9dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_margin="8dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="16dp"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/category_image"
                 android:layout_width="242dp"
                 android:layout_height="206dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:background="@color/colorWhite"
                 android:contentDescription="TODO"
-                android:scaleType="centerCrop"
-                app:layout_constraintCircleRadius="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.496"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/category_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="Category Name"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/category_image" />
+                android:textStyle="bold"
+                android:fontFamily="@font/arsenal" />
 
         </LinearLayout>
 
-    </android.support.v7.widget.CardView>
-
-</LinearLayout>
+</android.support.v7.widget.CardView>

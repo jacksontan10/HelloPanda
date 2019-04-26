@@ -16,7 +16,6 @@ import com.example.hellopanda.fragments.LearnFragment;
 import com.example.hellopanda.fragments.ProgressFragment;
 import com.example.hellopanda.fragments.RankingFragment;
 import com.example.hellopanda.fragments.TestFragment;
-import com.example.hellopanda.test.Common;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -39,8 +38,6 @@ public class Home extends AppCompatActivity {
 
             //centering of toolbar title and removing default title
             TextView centredTitle = toolbar.findViewById(R.id.toolbar_title);
-            TextView userText=toolbar.findViewById(R.id.toolbar_user);
-            userText.setText(Common.currentUser.getUser());
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayShowTitleEnabled(false);
 

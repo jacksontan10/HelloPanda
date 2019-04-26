@@ -16,5 +16,6 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center"
       android:padding="5dp"
+      android:fontFamily="@font/arsenal"
       tools:text="@tools:sample/lorem" />
 </LinearLayout>
