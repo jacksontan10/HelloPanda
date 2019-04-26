@@ -15,18 +15,30 @@
         android:layout_height="80dp"
         android:layout_gravity="center"
         android:layout_margin="8dp"
+        android:layout_marginStart="30dp"
         android:gravity="center"
         android:orientation="horizontal">
 
+        <ImageView
+            android:id="@+id/userPanda"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="15dp"
+            app:srcCompat="@drawable/hellopanda_icon" />
+
         <TextView
             android:id="@+id/text_name"
-            android:layout_width="170dp"
+            android:layout_width="66dp"
             android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/arsenal"
             android:gravity="center_vertical"
             android:text="Name"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:fontFamily="@font/arsenal"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/text_score"
@@ -38,6 +50,7 @@
             android:layout_width="155dp"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
+            android:layout_marginStart="0dp"
             android:text="Score"
             android:textAlignment="center"
             android:textSize="24sp"
