@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/slide_heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:layout_marginRight="100dp"
         android:text="HEADING"
         android:textAlignment="center"
-        android:textSize="36sp" />
+        android:textColor="@color/colorPrimaryGreen"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/slide_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="400dp"
         android:layout_marginRight="100dp"
         android:text="TextView"
         android:textAlignment="center"
-        android:textSize="24sp" />
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
 
     <ImageView
         android:id="@+id/slide_image"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="100dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="150dp"
         app:srcCompat="@drawable/onboarding1" />
 
 </RelativeLayout>

@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.hellopanda.test.Common;
 
 public class Onboarding extends AppCompatActivity {
 
@@ -98,7 +97,7 @@ public class Onboarding extends AppCompatActivity {
 
         if(mDots.length > 0) {
 
-            mDots[position].setTextColor(getResources().getColor(R.color.colorWhite));
+            mDots[position].setTextColor(getResources().getColor(R.color.colorPrimaryGreen));
         }
 
     }
@@ -154,3 +153,5 @@ public class Onboarding extends AppCompatActivity {
     };
 
 }
+
+//sourcecode created with the help of Android Slide / Walkthrough / Onboarding Screen Design - Android Studio: https://www.youtube.com/watch?v=byLKoPgB7yA

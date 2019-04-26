@@ -22,7 +22,6 @@ public class LearnAnimalsFragment extends Fragment {
     ViewPager viewPager;
     LearnAnimalsAdapter learnAnimalsAdapter;
     List<LearnAnimalsModel> models;
-    ArgbEvaluator argbEvaluator = new ArgbEvaluator();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

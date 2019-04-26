@@ -18,6 +18,7 @@ import com.example.hellopanda.learn.LearnColoursFragment;
 import com.example.hellopanda.learn.LearnFoodFragment;
 import com.example.hellopanda.learn.LearnNatureFragment;
 import com.example.hellopanda.R;
+import com.example.hellopanda.learn.LearnVideosFragment;
 
 
 public class LearnFragment extends Fragment implements View.OnClickListener, FragmentManager.OnBackStackChangedListener {
@@ -27,7 +28,7 @@ public class LearnFragment extends Fragment implements View.OnClickListener, Fra
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActivity().getSupportFragmentManager().addOnBackStackChangedListener(this);
+        getChildFragmentManager().addOnBackStackChangedListener(this); //null
 
     }
 
@@ -41,12 +42,14 @@ public class LearnFragment extends Fragment implements View.OnClickListener, Fra
         CardView animals = myFragment.findViewById(R.id.animals);
         CardView nature = myFragment.findViewById(R.id.nature);
         CardView colours = myFragment.findViewById(R.id.colours);
+        CardView youtube = myFragment.findViewById(R.id.youtube);
 
         basics.setOnClickListener(this);
         food.setOnClickListener(this);
         animals.setOnClickListener(this);
         nature.setOnClickListener(this);
        colours.setOnClickListener(this);
+       youtube.setOnClickListener(this);
 
         return myFragment;
     }
@@ -76,12 +79,16 @@ public class LearnFragment extends Fragment implements View.OnClickListener, Fra
                 fragment = new LearnColoursFragment();
                 replaceFragment(fragment);
                 break;
+            case R.id.youtube:
+                fragment = new LearnVideosFragment();
+                replaceFragment(fragment);
+                break;
         }
 
     }
 
     public void replaceFragment(Fragment someFragment) {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction(); //nullpointer
         transaction.replace(R.id.learnFragmentFrame, someFragment);
         transaction.addToBackStack("learnfragment");
         transaction.commit();
@@ -90,7 +97,7 @@ public class LearnFragment extends Fragment implements View.OnClickListener, Fra
     //Source: verboze implementation of back button on https://stackoverflow.com/questions/13086840/actionbar-up-navigation-with-fragments
     public void onBackStackChanged() {
         // enable Up button only if there are entries on the backstack
-        if(getActivity().getSupportFragmentManager().getBackStackEntryCount() < 1) {
+        if(getChildFragmentManager().getBackStackEntryCount() < 1) { //nullpointer
             ((Home)getActivity()).hideUpButton();
         }
     }

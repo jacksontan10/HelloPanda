@@ -222,6 +222,47 @@
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
+            <!--Row 3, Column 3-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/youtube"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="15dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="9dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="85dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/youtube"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="TODO" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/arsenal"
+                        android:text="Videos"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
         </GridLayout>
     </LinearLayout>
 
