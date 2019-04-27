@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.hellopanda.models.CategoryScore;
 import com.example.hellopanda.models.Ranking;
@@ -34,14 +35,14 @@ public class RankingFragment extends Fragment {
     View myFragment;
     RecyclerView rankingList;
     LinearLayoutManager layoutManager;
+    ImageView panda;
+    int getPandaResult;
     FirebaseRecyclerAdapter<Ranking, RankingViewHolder> adapter;
 
     FirebaseDatabase database;
     DatabaseReference categoryScore, rankingTable, user;
 
     int sum=0;
-    int pandaInt=0;
-
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,6 +59,7 @@ public class RankingFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //return super.onCreateView(inflater, container, savedInstanceState);
         myFragment = inflater.inflate(R.layout.fragment_ranking, container, false);
+        panda = myFragment.findViewById(R.id.userPanda);
 
         // initiate view
         rankingList = myFragment.findViewById(R.id.rankingList);
@@ -68,7 +70,6 @@ public class RankingFragment extends Fragment {
         layoutManager.setReverseLayout(true);
         layoutManager.setStackFromEnd(true);
         rankingList.setLayoutManager(layoutManager);
-
 
         // implement the callback
         updateScore(Common.currentUser.getUser(), new RankingCallBack<Ranking>() {
@@ -85,18 +86,59 @@ public class RankingFragment extends Fragment {
                 Ranking.class, R.layout.ranking_layout, RankingViewHolder.class, rankingTable.orderByChild("score")
         ) {
             @Override
-            protected void populateViewHolder(RankingViewHolder viewHolder, Ranking model, int position) {
+            protected void populateViewHolder(final RankingViewHolder viewHolder, Ranking model, int position) {
                 viewHolder.text_name.setText(model.getUser());
                 viewHolder.text_score.setText(String.valueOf(model.getScore()));
 
-                // switch(pandaInt) {
-                   // case 1:
-                        // viewHolder.userPanda.setImageResource(R.drawable.panda1);
+                user.child("panda").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        for (DataSnapshot data : dataSnapshot.getChildren()) {
+                            User local = data.getValue(User.class);
+
+                            getPandaResult = local.getPanda();
+
+                            if (getPandaResult == 1){
+                                viewHolder.userPanda.setImageResource(R.drawable.panda1);
+                            }
+                            else if (getPandaResult == 2){
+                                viewHolder.userPanda.setImageResource(R.drawable.panda2);
+                            }
+                            else if (getPandaResult == 3){
+                                viewHolder.userPanda.setImageResource(R.drawable.panda3);
+                            }
+                            else if (getPandaResult == 4){
+                                viewHolder.userPanda.setImageResource(R.drawable.panda4);
+                            }
+                            else if (getPandaResult == 5){
+                                viewHolder.userPanda.setImageResource(R.drawable.panda5);
+                            }
+                            else if (getPandaResult == 6){
+                                viewHolder.userPanda.setImageResource(R.drawable.panda6);
+                            }
+                            else{
+                                viewHolder.userPanda.setImageResource(R.drawable.hellopanda_icon);
+                            }
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
             }
         };
 
         adapter.notifyDataSetChanged();
         rankingList.setAdapter(adapter);
+
+        //panda setting
+
+
         return myFragment;
     }
 
@@ -105,9 +147,9 @@ public class RankingFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //Sums all the user's scores
-                for(DataSnapshot data:dataSnapshot.getChildren())
-                {
-                    CategoryScore ques = data.getValue(CategoryScore.class);
+                    for(DataSnapshot data:dataSnapshot.getChildren())
+                    {
+                        CategoryScore ques = data.getValue(CategoryScore.class);
                     sum+=Integer.parseInt(ques.getScore());
                    // Ranking panda = data.getValue(Ranking.class);
                     // pandaInt = panda.getPanda();
@@ -126,11 +168,11 @@ public class RankingFragment extends Fragment {
 
     private void showRanking() {
         rankingTable.orderByChild("score").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
+                @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot data:dataSnapshot.getChildren()) {
                     Ranking local = data.getValue(Ranking.class);
-                    Log.d("DEBUG", local.getUser());
+                    Log.d("DEBUG", " " + local.getUser());
                 }
             }
 

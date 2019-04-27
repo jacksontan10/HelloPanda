@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         editNewEmail = sign_up_layout.findViewById(R.id.editNewEmail);
 
         alertDialog.setView(sign_up_layout);
-        alertDialog.setIcon(R.drawable.panda6);
+        alertDialog.setIcon(R.drawable.hellopanda_icon);
 
         alertDialog.setNegativeButton("Back", new DialogInterface.OnClickListener() {
             @Override
@@ -140,9 +140,6 @@ public class MainActivity extends AppCompatActivity {
                             Intent selectPandaActivity = new Intent(MainActivity.this, SelectPanda.class);
                             Common.currentUser = user;
                             MainActivity.this.startActivity(selectPandaActivity);
-                            //Intent onboardActivity = new Intent(MainActivity.this, Onboarding.class);
-                            //Common.currentUser = user;
-                            //MainActivity.this.startActivity(onboardActivity);
                             finish();
                         }
                     }

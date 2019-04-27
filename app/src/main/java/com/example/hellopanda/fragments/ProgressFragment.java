@@ -29,7 +29,6 @@ public class ProgressFragment extends Fragment {
 
     View myFragment;
     TextView  highestScore;
-    TextView textView2;
 
     String storeScore;
     int storeScoreInt;

@@ -1,7 +1,6 @@
 package com.example.hellopanda.models;
 
 public class Ranking {
-    private int panda;
     private String user;
     private int score;
 
@@ -11,7 +10,6 @@ public class Ranking {
     public Ranking(String user, int score) {
         this.user = user;
         this.score = score;
-       // this.panda = panda;
     }
 
     public String getUser() {
@@ -30,5 +28,4 @@ public class Ranking {
         this.score = score;
     }
 
-    // public int getPanda() {return panda;}
 }
