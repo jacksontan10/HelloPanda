@@ -2,6 +2,7 @@ package com.example.hellopanda;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,17 +11,31 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.hellopanda.test.Common;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import static com.example.hellopanda.test.Common.currentUser;
 
 public class SelectPanda extends AppCompatActivity {
 
     Button btnFinished;
     ImageView getPanda1, getPanda2, getPanda3, getPanda4, getPanda5, getPanda6,getUserPanda;
     TextView getUser;
+    FirebaseDatabase database;
+    DatabaseReference users;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_panda);
+
+        //retrieve an instance of the firebase database
+        database = FirebaseDatabase.getInstance();
+
+        //declare users object with reference to "Users" database from Firebase
+        users = database.getReference("Users");
 
         //Clicking through different panda avatars
         getPanda1 = findViewById(R.id.panda1);
@@ -35,6 +50,7 @@ public class SelectPanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 getUserPanda.setImageResource(R.drawable.panda1);
+                users.child(Common.currentUser.getUser()).child("panda").setValue("1");
             }
         });
 
@@ -42,6 +58,7 @@ public class SelectPanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 getUserPanda.setImageResource(R.drawable.panda2);
+                users.child(Common.currentUser.getUser()).child("panda").setValue("2");
             }
         });
 
@@ -49,6 +66,7 @@ public class SelectPanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 getUserPanda.setImageResource(R.drawable.panda3);
+                users.child(Common.currentUser.getUser()).child("panda").setValue("3");
             }
         });
 
@@ -56,6 +74,7 @@ public class SelectPanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 getUserPanda.setImageResource(R.drawable.panda4);
+                users.child(Common.currentUser.getUser()).child("panda").setValue("4");
             }
         });
 
@@ -63,6 +82,7 @@ public class SelectPanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 getUserPanda.setImageResource(R.drawable.panda5);
+                users.child(Common.currentUser.getUser()).child("panda").setValue("5");
             }
         });
 
@@ -70,12 +90,13 @@ public class SelectPanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 getUserPanda.setImageResource(R.drawable.panda6);
+                users.child(Common.currentUser.getUser()).child("panda").setValue("6");
             }
         });
 
         //Display username
         getUser = findViewById(R.id.username);
-        getUser.setText(Common.currentUser.getUser().toString());
+        getUser.setText(currentUser.getUser());
 
         //I'm finished button
         btnFinished = findViewById(R.id.btn_finished);
