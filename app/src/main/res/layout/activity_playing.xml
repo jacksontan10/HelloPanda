@@ -16,12 +16,11 @@
         android:layout_marginTop="44dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toTopOf="@+id/question_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="TODO" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/question_text"
@@ -38,7 +37,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         android:fontFamily="@font/arsenal"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
     <LinearLayout
         android:id="@+id/group"

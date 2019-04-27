@@ -18,4 +18,15 @@
     <string name="ranking_icon">Ranking</string>
     <string name="button">Next</string>
     <string name="chat">Thank you for signing up! Now it\'s time to choose your Panda.</string>
+    <string name="progress_highscore_text">Your highest score is:</string>
+    <string name="progress_instructions_text">For every 100 points, find a new addition to your Bamboo Forest!</string>
+    <string name="test_instructions_text">You will have 10 seconds to answer each question and a correct answer will score 10 points.</string>
+    <string name="test_goodluck_text">好运 (hǎo yùn)! Good Luck!</string>
+    <string name="start">Start</string>
+    <string name="back">Back</string>
+    <string name="basics_desc">basicsCard</string>
+    <string name="animals_desc">animalsCard</string>
+    <string name="nature_desc">natureCard</string>
+    <string name="food_desc">foodCard</string>
+    <string name="colours_desc">coloursCard</string>
 </resources>

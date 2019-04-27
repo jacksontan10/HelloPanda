@@ -26,25 +26,25 @@
                 android:id="@+id/userIcon"
                 android:layout_width="46dp"
                 android:layout_height="46dp"
-                app:srcCompat="@drawable/user"
                 android:layout_gravity="center"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="15dp"/>
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="15dp"
+                app:srcCompat="@drawable/user" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/editNewUser"
-                android:layout_width="259dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
+                android:background="#fafafa"
                 android:fontFamily="@font/arsenal"
-                android:textSize="18sp"
                 android:hint="@string/username"
                 android:textColor="@android:color/black"
                 android:textColorHint="@color/colorPrimaryGreen"
+                android:textSize="18sp"
                 app:met_baseColor="@android:color/black"
                 app:met_floatingLabel="highlight"
                 app:met_primaryColor="@color/colorPrimaryDark"
-                android:background="#fafafa"
                 app:met_singleLineEllipsis="true" />
 
         </LinearLayout>
@@ -59,25 +59,25 @@
                 android:layout_width="46dp"
                 android:layout_height="46dp"
                 android:layout_gravity="center"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="3dp"
                 android:layout_marginEnd="15dp"
                 app:srcCompat="@drawable/password" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/editNewPassword"
-                android:layout_width="259dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
+                android:background="#fafafa"
                 android:fontFamily="@font/arsenal"
-                android:textSize="18sp"
                 android:hint="@string/password"
                 android:inputType="textPassword"
                 android:textColor="@android:color/black"
                 android:textColorHint="@color/colorPrimaryGreen"
+                android:textSize="18sp"
                 app:met_baseColor="@android:color/black"
                 app:met_floatingLabel="highlight"
                 app:met_primaryColor="@color/colorPrimaryDark"
-                android:background="#fafafa"
                 app:met_singleLineEllipsis="true" />
 
         </LinearLayout>
@@ -92,25 +92,25 @@
                 android:layout_width="46dp"
                 android:layout_height="46dp"
                 android:layout_gravity="center"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="3dp"
                 android:layout_marginEnd="15dp"
                 app:srcCompat="@drawable/email" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/editNewEmail"
-                android:layout_width="259dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
+                android:background="#fafafa"
                 android:fontFamily="@font/arsenal"
-                android:textSize="18sp"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:textColor="@android:color/black"
                 android:textColorHint="@color/colorPrimaryGreen"
+                android:textSize="18sp"
                 app:met_baseColor="@android:color/black"
                 app:met_floatingLabel="highlight"
                 app:met_primaryColor="@color/colorPrimaryDark"
-                android:background="#fafafa"
                 app:met_singleLineEllipsis="true" />
         </LinearLayout>
 
