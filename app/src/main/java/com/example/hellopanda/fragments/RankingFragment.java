@@ -89,56 +89,10 @@ public class RankingFragment extends Fragment {
             protected void populateViewHolder(final RankingViewHolder viewHolder, Ranking model, int position) {
                 viewHolder.text_name.setText(model.getUser());
                 viewHolder.text_score.setText(String.valueOf(model.getScore()));
-
-                user.child("panda").addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                        for (DataSnapshot data : dataSnapshot.getChildren()) {
-                            User local = data.getValue(User.class);
-
-                            getPandaResult = local.getPanda();
-
-                            if (getPandaResult == 1){
-                                viewHolder.userPanda.setImageResource(R.drawable.panda1);
-                            }
-                            else if (getPandaResult == 2){
-                                viewHolder.userPanda.setImageResource(R.drawable.panda2);
-                            }
-                            else if (getPandaResult == 3){
-                                viewHolder.userPanda.setImageResource(R.drawable.panda3);
-                            }
-                            else if (getPandaResult == 4){
-                                viewHolder.userPanda.setImageResource(R.drawable.panda4);
-                            }
-                            else if (getPandaResult == 5){
-                                viewHolder.userPanda.setImageResource(R.drawable.panda5);
-                            }
-                            else if (getPandaResult == 6){
-                                viewHolder.userPanda.setImageResource(R.drawable.panda6);
-                            }
-                            else{
-                                viewHolder.userPanda.setImageResource(R.drawable.hellopanda_icon);
-                            }
-
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
             }
         };
-
         adapter.notifyDataSetChanged();
         rankingList.setAdapter(adapter);
-
-        //panda setting
-
-
         return myFragment;
     }
 
@@ -151,8 +105,6 @@ public class RankingFragment extends Fragment {
                     {
                         CategoryScore ques = data.getValue(CategoryScore.class);
                     sum+=Integer.parseInt(ques.getScore());
-                   // Ranking panda = data.getValue(Ranking.class);
-                    // pandaInt = panda.getPanda();
                 }
                 //After summing scores, the Sum variable is processed here to prevent the sum resetting each time
                 Ranking ranking = new Ranking(user, sum);
@@ -161,7 +113,6 @@ public class RankingFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }
@@ -175,7 +126,6 @@ public class RankingFragment extends Fragment {
                     Log.d("DEBUG", " " + local.getUser());
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
