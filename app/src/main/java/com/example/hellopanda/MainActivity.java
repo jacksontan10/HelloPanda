@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         editNewEmail = sign_up_layout.findViewById(R.id.editNewEmail);
 
         alertDialog.setView(sign_up_layout);
-        alertDialog.setIcon(R.drawable.ic_account_circle_black_24dp);
+        alertDialog.setIcon(R.drawable.panda6);
 
         alertDialog.setNegativeButton("Back", new DialogInterface.OnClickListener() {
             @Override

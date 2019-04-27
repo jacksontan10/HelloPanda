@@ -36,15 +36,37 @@
         <item name="colorPrimary">@color/colorPrimaryGreen</item>
     </style>
 
-    <style name = "MyButton" parent = "Theme.AppCompat.Light">
-        <item name = "colorControlHighlight">@color/colorPrimaryGreen</item>
-        <item name="colorAccent">@color/colorPrimaryGreen</item>
-    </style>
-
     <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/colorPrimaryGreen</item>
         <item name="android:textColorSecondary">@color/inactive</item>
         <item name="colorAccent">@color/colorPrimaryGreen</item>
+    </style>
+
+    <!--Default button customisation-->
+    <style name="DefaultButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@drawable/default_button</item>
+        <item name="android:layout_width">330dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">Text</item>
+        <item name="android:fontFamily">@font/arsenal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="AnswerButton" parent="Widget.AppCompat.Button.Colored">
+    <item name="android:background">@drawable/default_answer_button</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:text">Answer X</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:stateListAnimator">@null</item>
     </style>
 
 </resources>

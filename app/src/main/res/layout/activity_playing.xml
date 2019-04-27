@@ -33,11 +33,12 @@
         android:layout_marginBottom="8dp"
         android:text="Question"
         android:textAlignment="center"
-        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/group"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/arsenal"
+        android:textSize="20dp"/>
 
     <LinearLayout
         android:id="@+id/group"
@@ -64,7 +65,7 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:text="0"
-                android:textSize="36sp" />
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/textTotalQuestion"
@@ -73,7 +74,7 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:text="1/30"
-                android:textSize="36sp" />
+                android:textSize="25sp" />
 
         </LinearLayout>
 
@@ -88,51 +89,23 @@
 
         <Button
             android:id="@+id/btnAnswerA"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="#FF8a80"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:text="Answer A"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            style="@style/AnswerButton"
+            android:text="Answer A"/>
 
         <Button
             android:id="@+id/btnAnswerB"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="#FF8a80"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:text="Answer B"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            style="@style/AnswerButton"
+            android:text="Answer B"/>
 
         <Button
             android:id="@+id/btnAnswerC"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="#FF8a80"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:text="Answer C"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            style="@style/AnswerButton"
+            android:text="Answer C"/>
 
         <Button
             android:id="@+id/btnAnswerD"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="#FF8a80"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:text="Answer D"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            style="@style/AnswerButton"
+            android:text="Answer D"/>
 
     </LinearLayout>
 

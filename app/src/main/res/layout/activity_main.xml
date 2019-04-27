@@ -131,31 +131,26 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/login_info"
+            android:layout_height="110dp"
+            android:layout_below="@+id/login_info"
             android:layout_gravity="center"
+            android:layout_marginTop="0dp"
             android:gravity="center"
             android:orientation="vertical">
 
             <Button
                 android:id="@+id/btn_sign_in"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="330dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimaryGreen"
-                android:layout_marginBottom="5dp"
-                android:fontFamily="@font/arsenal"
-                android:textAllCaps="false"
-                android:text="Login" />
+                style="@style/DefaultButton"
+                android:layout_marginBottom="10dp"
+                android:text="Login">
+
+            </Button>
 
             <Button
                 android:id="@+id/btn_sign_up"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="330dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimaryGreen"
-                android:fontFamily="@font/arsenal"
-                android:textAllCaps="false"
+                style="@style/DefaultButton"
+                android:background="@drawable/default_button"
+                android:backgroundTint="@color/colorPrimaryLight"
                 android:text="@string/sign_up" />
 
         </LinearLayout>
