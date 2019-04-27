@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.example.hellopanda.models.CategoryScore;
 import com.example.hellopanda.models.Ranking;
 import com.example.hellopanda.R;
+import com.example.hellopanda.models.User;
 import com.example.hellopanda.ranking.RankingCallBack;
 import com.example.hellopanda.ranking.RankingViewHolder;
 import com.example.hellopanda.test.Common;
@@ -23,6 +24,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.sql.Array;
@@ -35,9 +37,10 @@ public class RankingFragment extends Fragment {
     FirebaseRecyclerAdapter<Ranking, RankingViewHolder> adapter;
 
     FirebaseDatabase database;
-    DatabaseReference categoryScore, rankingTable;
+    DatabaseReference categoryScore, rankingTable, user;
 
     int sum=0;
+    int pandaInt=0;
 
 
     @Override
@@ -47,6 +50,7 @@ public class RankingFragment extends Fragment {
         database = FirebaseDatabase.getInstance();
         categoryScore = database.getReference("Category_Score");
         rankingTable = database.getReference("Ranking");
+        user = database.getReference("User");
     }
 
     @Nullable
@@ -85,11 +89,9 @@ public class RankingFragment extends Fragment {
                 viewHolder.text_name.setText(model.getUser());
                 viewHolder.text_score.setText(String.valueOf(model.getScore()));
 
-                viewHolder.setItemClickListener(new ItemClickListener() {
-                    @Override
-                    public void onClick(View view, int position, boolean isLongClick) {
-                    }
-                });
+                // switch(pandaInt) {
+                   // case 1:
+                        // viewHolder.userPanda.setImageResource(R.drawable.panda1);
             }
         };
 
@@ -107,6 +109,8 @@ public class RankingFragment extends Fragment {
                 {
                     CategoryScore ques = data.getValue(CategoryScore.class);
                     sum+=Integer.parseInt(ques.getScore());
+                   // Ranking panda = data.getValue(Ranking.class);
+                    // pandaInt = panda.getPanda();
                 }
                 //After summing scores, the Sum variable is processed here to prevent the sum resetting each time
                 Ranking ranking = new Ranking(user, sum);

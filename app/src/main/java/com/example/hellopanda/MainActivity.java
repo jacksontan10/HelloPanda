@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int i) {
                 final User user = new User(editNewUser.getText().toString(),
                         editNewPassword.getText().toString(),
-                        editNewEmail.getText().toString());
+                        editNewEmail.getText().toString(), 0);
 
                 users.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override

@@ -7,17 +7,18 @@ public class User {
     private String user;
     private String password;
     private String email;
+    private int panda;
 
     // initialise constructors
     public User() {
     }
 
-    public User(String user, String password, String email) {
+    public User(String user, String password, String email, int panda) {
         this.user = user;
         this.password = password;
         this.email = email;
+        this.panda = panda;
     }
-
     // create getter methods
     public String getUser() {
         return user;
@@ -30,4 +31,6 @@ public class User {
     public String getEmail() {
         return email;
     }
+
+    public int getPanda() { return panda;}
 }
